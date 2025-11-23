@@ -2,158 +2,558 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FlightLine Mycelium901 | Memphis DC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FlightLine Mycelium901 Memphis DC | Capital of NETTOPIA</title>
+  <meta name="description" content="FlightLine Mycelium901 Memphis DC Family Grid — DSX Packs, Gates, Proof Stack, and Family Lanes powering NETTOPIA.">
+
   <style>
     :root{
-      --accent:#00E5FF;
-      --accent-2:#7C4DFF;
-      --bg:#05070b;
-      --bg-2:#0b1020;
-      --panel:rgba(255,255,255,0.06);
-      --panel-2:rgba(255,255,255,0.10);
+      --city-name:"Mycelium901";
+      --city-code:"901";
+      --accent:#00E5FF;     /* cyan runway */
+      --accent-2:#8B5CFF;   /* purple neon */
+      --accent-3:#00FF88;   /* green proof */
+      --warning:#FFD166;    /* gold */
+      --danger:#FF3D9A;     /* pink */
+
+      --bg:#04060b;
+      --bg-2:#0a0f1f;
+      --panel:rgba(255,255,255,0.05);
+      --panel-2:rgba(255,255,255,0.08);
       --text:#eaf2ff;
-      --muted:rgba(234,242,255,0.75);
+      --muted:rgba(234,242,255,0.72);
+
       --radius:18px;
       --radius-lg:24px;
-      --shadow:0 10px 40px rgba(0,0,0,.45);
+      --shadow:0 12px 48px rgba(0,0,0,.55);
+
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
       --sans: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
     }
+
     *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
     body{
-      margin:0; font-family:var(--sans); color:var(--text);
-      background:
-        radial-gradient(900px 500px at -10% -20%, color-mix(in oklab, var(--accent) 25%, transparent), transparent 60%),
-        radial-gradient(900px 500px at 110% 0%, color-mix(in oklab, var(--accent-2) 25%, transparent), transparent 60%),
-        linear-gradient(180deg, var(--bg), var(--bg-2));
+      font-family:var(--sans);
+      color:var(--text);
       min-height:100vh;
+      background:
+        radial-gradient(1200px 700px at 0% -10%, color-mix(in oklab, var(--accent) 26%, transparent), transparent 60%),
+        radial-gradient(1000px 600px at 110% 0%, color-mix(in oklab, var(--accent-2) 25%, transparent), transparent 60%),
+        radial-gradient(900px 520px at 30% 120%, color-mix(in oklab, var(--accent-3) 18%, transparent), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
     }
-    .wrap{max-width:1100px;margin:0 auto;padding:18px}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1200px;margin:0 auto;padding:20px}
+
+    /* ======= TOP NAV / HEADER ======= */
     header{
-      background:linear-gradient(90deg, rgba(5,7,11,.95), rgba(11,16,32,.75));
-      border-bottom:1px solid rgba(255,255,255,.08);
-      position:sticky; top:0; z-index:50; backdrop-filter: blur(8px);
+      position:sticky;top:0;z-index:99;
+      background:linear-gradient(90deg, rgba(4,6,11,.94), rgba(10,15,31,.8));
+      border-bottom:1px solid rgba(255,255,255,.07);
+      backdrop-filter:blur(10px);
     }
-    .topbar{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;gap:10px}
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:14px 18px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;
+    }
     .badge{
-      font-family:var(--mono); font-weight:900; font-size:12px; letter-spacing:.12em;
-      padding:6px 10px; border-radius:999px;
-      background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#02070f;
-      box-shadow:0 0 18px color-mix(in oklab, var(--accent) 35%, transparent);
-    }
-    .title h1{margin:0;font-size:20px}
-    .title .sub{font-size:12px;color:var(--muted)}
-    .hero{
-      margin-top:14px; padding:16px; border-radius:var(--radius-lg);
-      background:var(--panel); border:1px solid rgba(255,255,255,.1); box-shadow:var(--shadow);
-      display:grid; grid-template-columns:1.2fr .8fr; gap:12px;
-    }
-    @media(max-width:900px){.hero{grid-template-columns:1fr}}
-    .card{
-      background:var(--panel-2); border:1px solid rgba(255,255,255,.1);
-      border-radius:var(--radius); padding:14px;
-    }
-    .card h2{margin:0 0 8px 0;font-size:18px}
-    .card p{margin:0;color:var(--muted);line-height:1.55}
-    .grid{
-      margin-top:14px;
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:10px;
-    }
-    .lane{
-      background:var(--panel); border:1px solid rgba(255,255,255,.1);
-      border-radius:16px; padding:14px; display:flex; flex-direction:column; gap:8px;
-      box-shadow:var(--shadow);
-    }
-    .lane .chip{
-      font-family:var(--mono); font-size:11px; font-weight:900; letter-spacing:.10em;
-      padding:5px 9px; border-radius:999px; width:max-content;
-      background:linear-gradient(135deg,
-        color-mix(in oklab, var(--accent) 20%, transparent),
-        color-mix(in oklab, var(--accent-2) 20%, transparent));
-      border:1px solid rgba(255,255,255,.12);
-    }
-    .lane .name{font-size:16px;font-weight:900}
-    .lane .desc{font-size:12px;color:var(--muted);line-height:1.45}
-    .btn{
-      margin-top:auto; display:inline-flex;justify-content:center;align-items:center;
-      padding:10px 12px;border-radius:12px;font-weight:800;
+      font-family:var(--mono);
+      font-weight:900;
+      letter-spacing:.12em;
+      font-size:12px;
+      padding:7px 10px;
+      border-radius:999px;
       background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      color:#05070b;text-decoration:none;
-      box-shadow:0 0 18px color-mix(in oklab, var(--accent) 35%, transparent);
+      color:#001018;
+      box-shadow:0 0 22px color-mix(in oklab, var(--accent) 55%, transparent);
+    }
+    .title h1{
+      margin:0;font-size:20px;letter-spacing:.02em;
+    }
+    .title .sub{
+      margin-top:2px;font-size:12px;color:var(--muted);
+    }
+
+    .nav{
+      display:flex;flex-wrap:wrap;gap:8px;
+    }
+    .nav a{
+      font-size:12px;padding:8px 10px;border-radius:999px;
+      background:var(--panel);border:1px solid rgba(255,255,255,.06);
       transition:.18s ease;
     }
-    .btn:hover{transform:translateY(-1px);filter:saturate(1.1)}
-    footer{margin-top:16px;border-top:1px solid rgba(255,255,255,.08);padding-top:10px;font-size:12px;color:var(--muted)}
+    .nav a:hover{
+      transform:translateY(-1px);
+      border-color:color-mix(in oklab, var(--accent) 65%, transparent);
+      box-shadow:0 0 18px color-mix(in oklab, var(--accent) 32%, transparent);
+    }
+
+    /* ======= LAYOUT ======= */
+    .hero{
+      margin-top:16px;display:grid;grid-template-columns:1.1fr .9fr;gap:12px;
+    }
+    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+
+    .card{
+      background:var(--panel);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius-lg);
+      padding:16px;
+      box-shadow:var(--shadow);
+    }
+    .card h2{margin:0 0 6px 0;font-size:18px}
+    .card p{margin:0;color:var(--muted);line-height:1.6}
+
+    .statrow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+    @media(max-width:800px){.statrow{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.statrow{grid-template-columns:1fr}}
+    .stat{
+      background:var(--panel-2);
+      border:1px solid rgba(255,255,255,.08);
+      padding:12px;border-radius:var(--radius);
+      display:flex;flex-direction:column;gap:6px;
+    }
+    .stat .label{font-size:11px;color:var(--muted);letter-spacing:.1em}
+    .stat .value{font-size:18px;font-weight:900}
+
+    .section{margin-top:14px;display:grid;grid-template-columns:repeat(12,1fr);gap:12px;}
+    .col-12{grid-column:span 12}
+    .col-8{grid-column:span 8}
+    .col-7{grid-column:span 7}
+    .col-6{grid-column:span 6}
+    .col-5{grid-column:span 5}
+    .col-4{grid-column:span 4}
+    @media(max-width:950px){
+      .col-8,.col-7,.col-6,.col-5,.col-4{grid-column:span 12}
+    }
+
+    .lane-header{
+      display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px;
+    }
+    .lane-chip{
+      font-family:var(--mono);font-size:11px;font-weight:900;letter-spacing:.12em;
+      padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.1);
+      background:linear-gradient(135deg,
+        color-mix(in oklab,var(--accent) 20%,transparent),
+        color-mix(in oklab,var(--accent-2) 20%,transparent));
+    }
+
+    /* ======= BUTTONS ======= */
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:10px 12px;border-radius:12px;font-weight:800;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#03060c;border:none;cursor:pointer;transition:.18s ease;text-align:center;
+      box-shadow:0 0 18px color-mix(in oklab,var(--accent) 38%,transparent);
+    }
+    .btn:hover{transform:translateY(-1px);filter:saturate(1.08)}
+    .btn.secondary{
+      background:var(--panel-2);color:var(--text);
+      border:1px solid rgba(255,255,255,.12);box-shadow:none;
+    }
+    .btn.mini{padding:7px 9px;font-size:12px;border-radius:10px}
+
+    /* ======= TERMINAL CARDS ======= */
+    .lanes-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;
+    }
+    .lane-card{
+      position:relative;
+      background:var(--panel-2);
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:16px;padding:14px;
+      display:flex;flex-direction:column;gap:8px;
+      transition:.18s ease;
+      overflow:hidden;
+    }
+    .lane-card:hover{
+      transform:translateY(-2px);
+      border-color:color-mix(in oklab,var(--accent) 55%,transparent);
+      box-shadow:0 0 26px color-mix(in oklab,var(--accent) 22%,transparent);
+    }
+    .lane-badge{
+      font-family:var(--mono);font-weight:900;letter-spacing:.1em;font-size:12px;
+      align-self:flex-start;padding:6px 8px;border-radius:999px;color:#001018;
+    }
+    .lane-title{font-size:16px;font-weight:900}
+    .lane-sub{font-size:12px;color:var(--muted);line-height:1.5}
+    .lane-meta{font-size:11px;color:var(--muted);letter-spacing:.06em}
+
+    /* ======= DEPARTURES BOARD ======= */
+    table{
+      width:100%;border-collapse:separate;border-spacing:0 8px;font-size:13px;
+    }
+    th{
+      text-align:left;font-size:11px;color:var(--muted);letter-spacing:.12em;padding:0 10px 6px 10px;
+    }
+    tr.board{
+      background:var(--panel-2);border:1px solid rgba(255,255,255,.08);
+    }
+    tr.board td{
+      padding:10px;border-top:1px solid rgba(255,255,255,.08);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    tr.board td:first-child{border-left:1px solid rgba(255,255,255,.08);border-top-left-radius:12px;border-bottom-left-radius:12px}
+    tr.board td:last-child{border-right:1px solid rgba(255,255,255,.08);border-top-right-radius:12px;border-bottom-right-radius:12px}
+    .status{
+      font-weight:900;font-family:var(--mono);letter-spacing:.08em;font-size:12px;
+      padding:6px 8px;border-radius:999px;display:inline-block;
+      background:color-mix(in oklab,var(--accent-3) 20%,transparent);
+      border:1px solid color-mix(in oklab,var(--accent-3) 55%,transparent);
+      color:#c9ffe5;
+    }
+
+    /* ======= PACKS ======= */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+    .pack{
+      background:var(--panel-2);border:1px solid rgba(255,255,255,.08);
+      border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:8px;
+    }
+    .pack .pname{font-weight:900}
+    .pack .pdesc{font-size:12px;color:var(--muted);line-height:1.4}
+    .pack .price{font-weight:900;font-family:var(--mono)}
+    .pack .buy{margin-top:auto}
+
+    footer{
+      margin:18px 0 8px;color:var(--muted);font-size:12px;
+      display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;
+      border-top:1px solid rgba(255,255,255,.08);padding-top:12px;
+    }
+    .tiny{font-size:11px;color:var(--muted)}
   </style>
 </head>
+
 <body>
 
 <header>
-  <div class="topbar wrap">
-    <div style="display:flex;align-items:center;gap:10px">
-      <div class="badge">MYCELIUM901</div>
+  <div class="topbar">
+    <div class="brand">
+      <div class="badge">901</div>
       <div class="title">
-        <h1>FlightLine Mycelium901 — Memphis DC</h1>
-        <div class="sub">Family Enterprise Infra-Index Grid · NETTOPIA Division</div>
+        <h1>FlightLine Mycelium901 Memphis DC</h1>
+        <div class="sub">Digital Real Estate & Airport Grid · Capital of NETTOPIA</div>
       </div>
     </div>
-    <div class="badge" style="background:var(--panel-2);color:var(--text)">ACTIVE</div>
+
+    <nav class="nav">
+      <a href="#lanes">Family Lanes</a>
+      <a href="#packs">DSX Packs</a>
+      <a href="#board">Gates Board</a>
+      <a href="#proof">Proof Stack</a>
+      <a href="#pc">PC Meeting</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
 </header>
 
 <main class="wrap">
 
+  <!-- ================== HERO ================== -->
   <section class="hero">
     <div class="card">
-      <h2>WHAT THIS HUB DOES</h2>
+      <h2>WHAT THIS PAGE DOES</h2>
       <p>
-        This is the Mycelium901 Family Enterprise Infra-Index for FlightLine Memphis DC.
-        Each lane below is a terminal: Stripe Packs fund motion, Calendly books proof,
-        and all traffic routes into DSX + Proof Stack under Overseer command.
+        Shows **Mycelium901 Family Lanes** like a terminal menu, lists **FlightLine Gates** like a departures screen,
+        exposes the three-layer **Proof Stack**, and routes clients into Stripe/Calendly/Forms for each lane.
       </p>
+
+      <div class="statrow">
+        <div class="stat"><div class="label">CITY HUB</div><div class="value">MYCELIUM901</div></div>
+        <div class="stat"><div class="label">LANES</div><div class="value">5 ACTIVE</div></div>
+        <div class="stat"><div class="label">MOTION</div><div class="value">DSX PACKS</div></div>
+        <div class="stat"><div class="label">PROOF</div><div class="value">STACK LIVE</div></div>
+      </div>
     </div>
+
     <div class="card">
-      <h2>COMMAND FLOW</h2>
-      <p>
-        Mom operates Gates (routing). Each sibling runs a lane.
-        Overseer controls Stripe, DSX Packs, and weekly PC Meetings.
+      <div class="lane-header">
+        <h2>Quick Actions</h2>
+        <div class="lane-chip">HUB TERMINAL</div>
+      </div>
+      <div style="display:grid;gap:8px">
+        <a class="btn" href="#lanes">Enter Family Lanes</a>
+        <a class="btn secondary" href="#packs">Buy DSX Pack</a>
+        <a class="btn secondary" href="#proof">Open Proof Stack</a>
+      </div>
+      <p class="tiny" style="margin-top:10px">
+        Every ZIP = Runway · Every Scan = Proof · Every Payment = Public.
       </p>
     </div>
   </section>
 
-  <section class="grid">
-    <div class="lane">
-      <div class="chip">FIT · FITNESS</div>
-      <div class="name">FlightLine Fitness — VIC</div>
-      <div class="desc">Go Hard Go Home Brand. Personal training + kinetic proof lane.</div>
-      <a class="btn" href="./lanes/fit-vic/index.html">Enter Fitness Terminal</a>
+  <!-- ================== FAMILY LANES ================== -->
+  <section class="section">
+    <div class="card col-12" id="lanes">
+      <div class="lane-header">
+        <h2>FAMILY LANES — TERMINAL MENU</h2>
+        <div class="lane-chip">MYCELIUM901 GRID</div>
+      </div>
+
+      <div class="lanes-grid">
+
+        <!-- VIC FITNESS -->
+        <a class="lane-card" href="lanes/fit-vic/index.html">
+          <div class="lane-badge" style="background:linear-gradient(135deg,#00FF88,#FFD166);">FIT</div>
+          <div class="lane-title">FlightLine Fitness — Go Hard Go Home</div>
+          <div class="lane-sub">Vic · Private Training · Kinetic Proof</div>
+          <div class="lane-meta">Lane Code: FIT · Status: Active</div>
+          <div style="display:flex;gap:6px;margin-top:6px">
+            <span class="status">BOOK</span>
+            <span class="status">TRAIN</span>
+          </div>
+        </a>
+
+        <!-- VON RADIO -->
+        <a class="lane-card" href="lanes/rad-von/index.html">
+          <div class="lane-badge" style="background:linear-gradient(135deg,#FF3D9A,#7A00FF);">RAD</div>
+          <div class="lane-title">FlightLine Radio — The Sound of the Grid</div>
+          <div class="lane-sub">Von · Music on USB/CD · Sonic Motion</div>
+          <div class="lane-meta">Lane Code: RAD · Status: Active</div>
+          <div style="display:flex;gap:6px;margin-top:6px">
+            <span class="status">BUY</span>
+            <span class="status">COLLAB</span>
+          </div>
+        </a>
+
+        <!-- TASHAWNDA BASEMENT -->
+        <a class="lane-card" href="lanes/bsm-tashawnda/index.html">
+          <div class="lane-badge" style="background:linear-gradient(135deg,#00C2FF,#FF8C00);">BSM</div>
+          <div class="lane-title">FlightLine Basement — The Engine Room</div>
+          <div class="lane-sub">TaShawnda · Virtual Assistant · Ops Control</div>
+          <div class="lane-meta">Lane Code: BSM · Status: Active</div>
+          <div style="display:flex;gap:6px;margin-top:6px">
+            <span class="status">OPS</span>
+            <span class="status">ROUTE</span>
+          </div>
+        </a>
+
+        <!-- MOM RECEPTION GRID -->
+        <a class="lane-card" href="lanes/rcp-mom/index.html">
+          <div class="lane-badge" style="background:linear-gradient(135deg,#FFFFFF,#00BFA6);">RCP</div>
+          <div class="lane-title">Reception Desk — Family Routing Grid</div>
+          <div class="lane-sub">Mom · Intake · Routes clients to correct lane</div>
+          <div class="lane-meta">Lane Code: RCP · Status: Active</div>
+          <div style="display:flex;gap:6px;margin-top:6px">
+            <span class="status">INTAKE</span>
+            <span class="status">DISPATCH</span>
+          </div>
+        </a>
+
+        <!-- ANGEL GATES / DRE -->
+        <a class="lane-card" href="lanes/gate-angel/index.html">
+          <div class="lane-badge" style="background:linear-gradient(135deg,#19E6A3,#FFD166);">DRE</div>
+          <div class="lane-title">FlightLine Gates — Digital Real Estate</div>
+          <div class="lane-sub">Angel · Corridor Leasing · Listings · Gate Ops</div>
+          <div class="lane-meta">Lane Code: DRE · Status: Active</div>
+          <div style="display:flex;gap:6px;margin-top:6px">
+            <span class="status">LEASE</span>
+            <span class="status">LIST</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== DSX PACKS (HUB) ================== -->
+  <section class="section">
+    <div class="card col-12" id="packs">
+      <div class="lane-header">
+        <h2>DSX PACKS — FAMILY MOTION FUEL</h2>
+        <div class="lane-chip">STRIPE HUB</div>
+      </div>
+      <p>
+        These DSX Packs fund motion across all family lanes.  
+        If you’re unsure which lane to choose, start here.
+      </p>
+
+      <div class="grid" style="margin-top:10px">
+        <div class="pack">
+          <div class="pname">DSX Pack 01 — Starter</div>
+          <div class="pdesc">Entry motion credit.</div>
+          <div class="price">$1</div>
+          <a class="btn buy" href="PASTE_DSX_STRIPE_1">Buy Now</a>
+        </div>
+
+        <div class="pack">
+          <div class="pname">DSX Pack 02 — Local Ops</div>
+          <div class="pdesc">Neighborhood motion.</div>
+          <div class="price">$5</div>
+          <a class="btn buy" href="PASTE_DSX_STRIPE_2">Buy Now</a>
+        </div>
+
+        <div class="pack">
+          <div class="pname">DSX Pack 03 — Corridor Builder</div>
+          <div class="pdesc">Build momentum and routes.</div>
+          <div class="price">$10</div>
+          <a class="btn buy" href="PASTE_DSX_STRIPE_3">Buy Now</a>
+        </div>
+
+        <div class="pack">
+          <div class="pname">DSX Pack 04 — City Runner</div>
+          <div class="pdesc">High-motion tier.</div>
+          <div class="price">$25</div>
+          <a class="btn buy" href="PASTE_DSX_STRIPE_4">Buy Now</a>
+        </div>
+
+        <div class="pack">
+          <div class="pname">DSX Pack 05 — Regional Motion</div>
+          <div class="pdesc">Elite fuel for serious buildout.</div>
+          <div class="price">$50</div>
+          <a class="btn buy" href="PASTE_DSX_STRIPE_5">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== DEPARTURES / GATES BOARD ================== -->
+  <section class="section">
+    <div class="card col-12" id="board">
+      <div class="lane-header">
+        <h2>FLIGHTLINE BOARD — DEPARTURES</h2>
+        <div class="lane-chip">G1–G17 STYLE</div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>GATE</th>
+            <th>SECTION</th>
+            <th>ROUTE</th>
+            <th>CODE</th>
+            <th>STATUS</th>
+            <th>VIEW</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="board">
+            <td>FIT</td><td>TRAINING</td><td>Vic Fitness</td><td>FIT</td>
+            <td><span class="status">ACTIVE</span></td>
+            <td><a class="btn mini" href="lanes/fit-vic/index.html">View</a></td>
+          </tr>
+
+          <tr class="board">
+            <td>RAD</td><td>AUDIO</td><td>Von Radio</td><td>RAD</td>
+            <td><span class="status">ACTIVE</span></td>
+            <td><a class="btn mini" href="lanes/rad-von/index.html">View</a></td>
+          </tr>
+
+          <tr class="board">
+            <td>BSM</td><td>OPS</td><td>TaShawnda Basement</td><td>BSM</td>
+            <td><span class="status">ACTIVE</span></td>
+            <td><a class="btn mini" href="lanes/bsm-tashawnda/index.html">View</a></td>
+          </tr>
+
+          <tr class="board">
+            <td>RCP</td><td>RECEPTION</td><td>Mom Routing Desk</td><td>RCP</td>
+            <td><span class="status">ACTIVE</span></td>
+            <td><a class="btn mini" href="lanes/rcp-mom/index.html">View</a></td>
+          </tr>
+
+          <tr class="board">
+            <td>DRE</td><td>GATES</td><td>Angel Digital Real Estate</td><td>DRE</td>
+            <td><span class="status">ACTIVE</span></td>
+            <td><a class="btn mini" href="lanes/gate-angel/index.html">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ================== PROOF STACK (HUB) ================== -->
+  <section class="section">
+    <div class="card col-12" id="proof">
+      <div class="lane-header">
+        <h2>PROOF STACK — HUB</h2>
+        <div class="lane-chip">SCAN · MOVE · CUSTODY</div>
+      </div>
+
+      <p>
+        Proof Stack entries are universal. Every lane feeds these three registers.
+      </p>
+
+      <div class="grid" style="margin-top:10px">
+        <div class="pack">
+          <div class="pname">Scan Log</div>
+          <div class="pdesc">Client entry + route scan record.</div>
+          <a class="btn secondary buy" href="PASTE_SCAN_LOG_FORM">Open Scan Log</a>
+        </div>
+
+        <div class="pack">
+          <div class="pname">Motion Ledger</div>
+          <div class="pdesc">Stripe purchase + motion proof record.</div>
+          <a class="btn secondary buy" href="PASTE_MOTION_LEDGER_FORM">Open Motion Ledger</a>
+        </div>
+
+        <div class="pack">
+          <div class="pname">Custody Register</div>
+          <div class="pdesc">Service delivery + follow-up outcomes.</div>
+          <a class="btn secondary buy" href="PASTE_CUSTODY_REGISTER_FORM">Open Custody Register</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== PC MEETING ================== -->
+  <section class="section">
+    <div class="card col-7" id="pc">
+      <div class="lane-header">
+        <h2>30-Minute PC Meeting (You)</h2>
+        <div class="lane-chip">PC-30</div>
+      </div>
+      <p>
+        Weekly performance review for all five lanes.  
+        Every Proof entry rolls into PC-30 for decisions and upgrades.
+      </p>
+
+      <div style="margin-top:10px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12);min-height:520px;">
+        <iframe src="PASTE_PC_MEETING_CALENDLY"
+                width="100%" height="520" frameborder="0" scrolling="no"
+                title="PC Meeting Calendly"></iframe>
+      </div>
     </div>
 
-    <div class="lane">
-      <div class="chip">RAD · RADIO</div>
-      <div class="name">FlightLine Radio — VON</div>
-      <div class="desc">Music distribution lane. CDs/USB bundles, sonic motion.</div>
-      <a class="btn" href="./lanes/rad-von/index.html">Enter Radio Terminal</a>
-    </div>
+    <div class="card col-5">
+      <div class="lane-header">
+        <h2>System Rules</h2>
+        <div class="lane-chip">OPS</div>
+      </div>
 
-    <div class="lane">
-      <div class="chip">BSM · BASEMENT</div>
-      <div class="name">FlightLine Basement — TASHAWNDA</div>
-      <div class="desc">Virtual Ops engine room. Admin, VA packs, back-office lane.</div>
-      <a class="btn" href="./lanes/bsm-tashawnda/index.html">Enter Basement Terminal</a>
+      <ul style="line-height:1.7;color:var(--muted);padding-left:18px">
+        <li>All lane payments flow through Stripe Packs.</li>
+        <li>All bookings are Proof Stack entries.</li>
+        <li>Reception (Mom) routes new clients.</li>
+        <li>Gates/DRE (Angel) manages corridor leasing.</li>
+        <li>PC-30 meeting handles upgrades and enforcement.</li>
+      </ul>
     </div>
+  </section>
 
-    <div class="lane">
-      <div class="chip">GATE · GATES</div>
-      <div class="name">FlightLine Gates — MOM</div>
-      <div class="desc">Reception + routing desk. Directs clients to correct terminal.</div>
-      <a class="btn" href="./lanes/gate-mom/index.html">Enter Gates Terminal</a>
+  <!-- ================== CONTACT ================== -->
+  <section class="section">
+    <div class="card col-12" id="contact">
+      <div class="lane-header">
+        <h2>CONTACT — FLIGHTLINE HQ</h2>
+        <div class="lane-chip">OPS</div>
+      </div>
+
+      <p>Need help or partnership routing? Contact HQ.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+        <a class="btn secondary" href="tel:PASTE_HQ_PHONE">Call HQ</a>
+        <a class="btn secondary" href="mailto:PASTE_HQ_EMAIL">Email HQ</a>
+        <a class="btn" href="#lanes">Family Lanes</a>
+      </div>
     </div>
   </section>
 
   <footer>
-    FlightLine Mycelium901 Memphis DC → NETTOPIA · Family Ops Grid
+    <div>FlightLine Mycelium901 Memphis DC → NETTOPIA</div>
+    <div class="tiny">5 Lanes Active · DSX Motion Fuel · Proof Stack Live</div>
   </footer>
 
 </main>
