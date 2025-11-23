@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlightLine Mycelium901 | Memphis DC</title>
+  <style>
+    :root{
+      --accent:#00E5FF;
+      --accent-2:#7C4DFF;
+      --bg:#05070b;
+      --bg-2:#0b1020;
+      --panel:rgba(255,255,255,0.06);
+      --panel-2:rgba(255,255,255,0.10);
+      --text:#eaf2ff;
+      --muted:rgba(234,242,255,0.75);
+      --radius:18px;
+      --radius-lg:24px;
+      --shadow:0 10px 40px rgba(0,0,0,.45);
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --sans: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:var(--sans); color:var(--text);
+      background:
+        radial-gradient(900px 500px at -10% -20%, color-mix(in oklab, var(--accent) 25%, transparent), transparent 60%),
+        radial-gradient(900px 500px at 110% 0%, color-mix(in oklab, var(--accent-2) 25%, transparent), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
+      min-height:100vh;
+    }
+    .wrap{max-width:1100px;margin:0 auto;padding:18px}
+    header{
+      background:linear-gradient(90deg, rgba(5,7,11,.95), rgba(11,16,32,.75));
+      border-bottom:1px solid rgba(255,255,255,.08);
+      position:sticky; top:0; z-index:50; backdrop-filter: blur(8px);
+    }
+    .topbar{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;gap:10px}
+    .badge{
+      font-family:var(--mono); font-weight:900; font-size:12px; letter-spacing:.12em;
+      padding:6px 10px; border-radius:999px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#02070f;
+      box-shadow:0 0 18px color-mix(in oklab, var(--accent) 35%, transparent);
+    }
+    .title h1{margin:0;font-size:20px}
+    .title .sub{font-size:12px;color:var(--muted)}
+    .hero{
+      margin-top:14px; padding:16px; border-radius:var(--radius-lg);
+      background:var(--panel); border:1px solid rgba(255,255,255,.1); box-shadow:var(--shadow);
+      display:grid; grid-template-columns:1.2fr .8fr; gap:12px;
+    }
+    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+    .card{
+      background:var(--panel-2); border:1px solid rgba(255,255,255,.1);
+      border-radius:var(--radius); padding:14px;
+    }
+    .card h2{margin:0 0 8px 0;font-size:18px}
+    .card p{margin:0;color:var(--muted);line-height:1.55}
+    .grid{
+      margin-top:14px;
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:10px;
+    }
+    .lane{
+      background:var(--panel); border:1px solid rgba(255,255,255,.1);
+      border-radius:16px; padding:14px; display:flex; flex-direction:column; gap:8px;
+      box-shadow:var(--shadow);
+    }
+    .lane .chip{
+      font-family:var(--mono); font-size:11px; font-weight:900; letter-spacing:.10em;
+      padding:5px 9px; border-radius:999px; width:max-content;
+      background:linear-gradient(135deg,
+        color-mix(in oklab, var(--accent) 20%, transparent),
+        color-mix(in oklab, var(--accent-2) 20%, transparent));
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .lane .name{font-size:16px;font-weight:900}
+    .lane .desc{font-size:12px;color:var(--muted);line-height:1.45}
+    .btn{
+      margin-top:auto; display:inline-flex;justify-content:center;align-items:center;
+      padding:10px 12px;border-radius:12px;font-weight:800;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#05070b;text-decoration:none;
+      box-shadow:0 0 18px color-mix(in oklab, var(--accent) 35%, transparent);
+      transition:.18s ease;
+    }
+    .btn:hover{transform:translateY(-1px);filter:saturate(1.1)}
+    footer{margin-top:16px;border-top:1px solid rgba(255,255,255,.08);padding-top:10px;font-size:12px;color:var(--muted)}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="topbar wrap">
+    <div style="display:flex;align-items:center;gap:10px">
+      <div class="badge">MYCELIUM901</div>
+      <div class="title">
+        <h1>FlightLine Mycelium901 — Memphis DC</h1>
+        <div class="sub">Family Enterprise Infra-Index Grid · NETTOPIA Division</div>
+      </div>
+    </div>
+    <div class="badge" style="background:var(--panel-2);color:var(--text)">ACTIVE</div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="card">
+      <h2>WHAT THIS HUB DOES</h2>
+      <p>
+        This is the Mycelium901 Family Enterprise Infra-Index for FlightLine Memphis DC.
+        Each lane below is a terminal: Stripe Packs fund motion, Calendly books proof,
+        and all traffic routes into DSX + Proof Stack under Overseer command.
+      </p>
+    </div>
+    <div class="card">
+      <h2>COMMAND FLOW</h2>
+      <p>
+        Mom operates Gates (routing). Each sibling runs a lane.
+        Overseer controls Stripe, DSX Packs, and weekly PC Meetings.
+      </p>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="lane">
+      <div class="chip">FIT · FITNESS</div>
+      <div class="name">FlightLine Fitness — VIC</div>
+      <div class="desc">Go Hard Go Home Brand. Personal training + kinetic proof lane.</div>
+      <a class="btn" href="./lanes/fit-vic/index.html">Enter Fitness Terminal</a>
+    </div>
+
+    <div class="lane">
+      <div class="chip">RAD · RADIO</div>
+      <div class="name">FlightLine Radio — VON</div>
+      <div class="desc">Music distribution lane. CDs/USB bundles, sonic motion.</div>
+      <a class="btn" href="./lanes/rad-von/index.html">Enter Radio Terminal</a>
+    </div>
+
+    <div class="lane">
+      <div class="chip">BSM · BASEMENT</div>
+      <div class="name">FlightLine Basement — TASHAWNDA</div>
+      <div class="desc">Virtual Ops engine room. Admin, VA packs, back-office lane.</div>
+      <a class="btn" href="./lanes/bsm-tashawnda/index.html">Enter Basement Terminal</a>
+    </div>
+
+    <div class="lane">
+      <div class="chip">GATE · GATES</div>
+      <div class="name">FlightLine Gates — MOM</div>
+      <div class="desc">Reception + routing desk. Directs clients to correct terminal.</div>
+      <a class="btn" href="./lanes/gate-mom/index.html">Enter Gates Terminal</a>
+    </div>
+  </section>
+
+  <footer>
+    FlightLine Mycelium901 Memphis DC → NETTOPIA · Family Ops Grid
+  </footer>
+
+</main>
+</body>
+</html>
