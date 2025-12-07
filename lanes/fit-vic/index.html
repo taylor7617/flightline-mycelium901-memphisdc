@@ -2,62 +2,232 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FIT · FlightLine Fitness — Go Hard Go Home</title>
-  <link rel="stylesheet" href="../shared.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>FlightLine Fitness — Vic | Mycelium901</title>
+  <meta name="description" content="FlightLine Fitness with Vic — private training, kinetic proof, and DSX-fueled sessions for Mycelium901.">
+
+  <style>
+    :root{
+      --accent:#00FF88;
+      --accent-2:#FFD166;
+      --bg:#020508;
+      --bg-2:#050a12;
+      --panel:rgba(255,255,255,0.06);
+      --panel-2:rgba(255,255,255,0.1);
+      --text:#EAF7FF;
+      --muted:rgba(234,247,255,0.72);
+      --radius:18px;
+      --shadow:0 18px 60px rgba(0,0,0,0.7);
+      --mono:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --sans:system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:var(--sans);
+      color:var(--text);
+      min-height:100vh;
+      background:
+        radial-gradient(900px 600px at 0% 0%, rgba(0,255,136,0.15), transparent 60%),
+        radial-gradient(900px 600px at 100% 100%, rgba(255,209,102,0.16), transparent 60%),
+        linear-gradient(180deg,var(--bg),var(--bg-2));
+      padding:20px;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1050px;margin:0 auto}
+
+    header{
+      display:flex;justify-content:space-between;align-items:center;gap:10px;
+      margin-bottom:18px;
+    }
+    .lane-tag{
+      font-family:var(--mono);
+      font-size:11px;
+      letter-spacing:.18em;
+      padding:6px 10px;
+      border-radius:999px;
+      background:linear-gradient(120deg,var(--accent),var(--accent-2));
+      color:#021408;
+      font-weight:900;
+      box-shadow:0 0 22px rgba(0,255,136,0.4);
+    }
+    .hub-link{
+      font-size:12px;
+      padding:7px 11px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.18);
+      background:rgba(0,0,0,0.35);
+    }
+    .hub-link span{opacity:.75}
+
+    .grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:16px;
+    }
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+
+    .card{
+      background:var(--panel);
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:16px;
+      box-shadow:var(--shadow);
+    }
+    h1{font-size:26px;margin-bottom:4px;}
+    .sub{font-size:13px;color:var(--muted);margin-bottom:12px}
+
+    .btn-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;margin-bottom:6px;}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:9px 13px;border-radius:12px;font-size:13px;font-weight:800;
+      border:none;cursor:pointer;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#021408;
+      box-shadow:0 0 18px rgba(0,255,136,0.4);
+    }
+    .btn.secondary{
+      background:rgba(0,0,0,0.4);
+      color:var(--text);
+      box-shadow:none;
+      border:1px solid rgba(255,255,255,0.16);
+    }
+
+    .metric-row{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;margin-top:10px;
+    }
+    @media(max-width:700px){.metric-row{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.metric-row{grid-template-columns:1fr}}
+
+    .metric{
+      background:var(--panel-2);
+      padding:10px 11px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.1);
+      font-size:12px;
+    }
+    .metric label{
+      display:block;
+      font-size:11px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:6px;
+      font-family:var(--mono);
+    }
+    .metric div{font-weight:800;font-size:15px;}
+
+    .pill{
+      display:inline-flex;
+      padding:4px 8px;
+      border-radius:999px;
+      font-size:11px;
+      border:1px solid rgba(255,255,255,0.18);
+      margin-right:4px;
+      margin-top:4px;
+    }
+
+    .image-wrap{
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.14);
+      background:radial-gradient(circle at 10% 0%,rgba(0,255,136,0.18),transparent 55%),
+                 radial-gradient(circle at 100% 100%,rgba(255,209,102,0.14),transparent 55%),
+                 #020508;
+    }
+    .image-wrap img{
+      display:block;
+      width:100%;
+      height:auto;
+      object-fit:cover;
+    }
+
+    .block{
+      margin-top:14px;
+      background:var(--panel);
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.1);
+      padding:14px;
+    }
+    .block h2{font-size:16px;margin-bottom:4px;}
+    .block p{font-size:13px;color:var(--muted);margin-bottom:8px;}
+    ol,ul{margin-left:18px;font-size:13px;color:var(--muted);line-height:1.7}
+  </style>
 </head>
 <body>
-  <div class="page">
+<div class="wrap">
+  <header>
+    <div>
+      <div class="lane-tag">LANE FIT · VIC</div>
+      <div style="margin-top:6px;font-size:12px;color:var(--muted);font-family:var(--mono);">
+        FlightLine Fitness — Go Hard Go Home · Mycelium901
+      </div>
+    </div>
+    <a class="hub-link" href="../../index.html#lanes">⟵ Back to Mycelium901 <span>/ Family Lanes</span></a>
+  </header>
 
-    <div class="header">
-      <div class="tag">FIT · TRAINING</div>
-      <div class="title-block">
-        <h1>FlightLine Fitness — Go Hard Go Home</h1>
-        <div class="sub">
-          Vic · Private Training · Kinetic Proof · Boxer Path &amp; Family Conditioning
+  <section class="grid">
+    <div class="card">
+      <h1>Private Training · Kinetic Proof</h1>
+      <div class="sub">
+        This lane turns <strong>workouts into receipts</strong> — every rep, set, and session
+        becomes motion you can point to and prove.
+      </div>
+
+      <div class="btn-row">
+        <a class="btn" href="PASTE_VIC_CALENDLY" target="_blank" rel="noopener">Book a Session</a>
+        <a class="btn secondary" href="PASTE_VIC_DSX_PACK" target="_blank" rel="noopener">Load DSX Pack for Training</a>
+      </div>
+
+      <div class="metric-row">
+        <div class="metric">
+          <label>Session Types</label>
+          <div>1:1 · Small Squad · Remote</div>
+        </div>
+        <div class="metric">
+          <label>Focus</label>
+          <div>Discipline · Strength · Recovery</div>
+        </div>
+        <div class="metric">
+          <label>Proof</label>
+          <div>Logged in Motion Ledger</div>
         </div>
       </div>
-    </div>
 
-    <div class="hero">
-      <img src="../../assets/img/vic-bitcoin-sign-plane.png" alt="FlightLine Fitness aircraft on Bitcoin Island ramp" />
-      <div class="hero-overlay">
-        <strong>FIT Gate</strong> — Vic on the kinetic runway, tied into DSX Packs and PC-30.
+      <div style="margin-top:10px;font-size:11px;color:var(--muted);">
+        <span class="pill">Athletes</span>
+        <span class="pill">Veterans</span>
+        <span class="pill">High-Discipline Families</span>
       </div>
     </div>
 
-    <div class="card">
-      <h2>Standard Flight Profile</h2>
-      <p>Every FIT session follows a repeatable flight profile:</p>
-      <ul style="margin:0 0 6px 18px;padding:0;font-size:13px;color:var(--muted);">
-        <li>Warm-up &amp; mobility (Google Vids guided).</li>
-        <li>Footwork &amp; ring movement (Boxer path).</li>
-        <li>Strength, core, and conditioning blocks.</li>
-        <li>Cool-down, recovery, and notes into PC-30 sheet.</li>
-      </ul>
-      <div class="btn-row">
-        <a class="btn" href="PASTE_FIT_CALENDLY" target="_blank" rel="noopener">Book 1:1 Session</a>
-        <a class="btn secondary" href="PASTE_FIT_GOOGLE_VIDS" target="_blank" rel="noopener">Open Training Library (Google Vids)</a>
-        <a class="btn secondary" href="PASTE_FIT_INTAKE_FORM" target="_blank" rel="noopener">New Athlete Intake Form</a>
-      </div>
-      <div class="meta">ALL FIT BOOKINGS FLOW TO SCAN LOG · MOTION LEDGER · PC-30</div>
+    <div class="image-wrap">
+      <img src="../../assets/img/vic-bitcoin-sign-plane.png" alt="FlightLine Fitness — Vic lane artwork">
     </div>
+  </section>
 
-    <div class="card">
-      <h2>Linked Systems</h2>
-      <p>Everything in this lane drops into the central Proof Stack.</p>
-      <ul style="margin:0 0 6px 18px;padding:0;font-size:13px;color:var(--muted);">
-        <li>All payments: DSX Packs via Stripe.</li>
-        <li>All bookings: FIT Calendly / Form → Scan Log.</li>
-        <li>All results: Logged into Custody Register.</li>
-      </ul>
-    </div>
+  <section class="block">
+    <h2>How a FlightLine Fitness Session Works</h2>
+    <p>Every session follows the same simple flight plan:</p>
+    <ol>
+      <li><strong>Scan In</strong> — You book and load the DSX Pack that matches your mission.</li>
+      <li><strong>Briefing</strong> — Vic reads your goals, current state, and constraints.</li>
+      <li><strong>Execution</strong> — Kinetic work. Clear sets, reps, timing, and intensity.</li>
+      <li><strong>Proof</strong> — Outcome, notes, and upgrades flow into the Motion Ledger.</li>
+      <li><strong>Next Route</strong> — If needed, you’re routed to nutrition, recovery, or another lane.</li>
+    </ol>
+  </section>
 
-    <div class="footer">
-      <span>FIT Lane · Mycelium901 Memphis DC</span>
-      <a href="../../index.html">← Back to Mycelium901 Hub</a>
-    </div>
-
-  </div>
+  <section class="block">
+    <h2>Choose Your Mission</h2>
+    <ul>
+      <li><strong>Baseline Flight Check</strong> — test, measure, and map where you are now.</li>
+      <li><strong>Build Cycle</strong> — multi-week strength or conditioning focus.</li>
+      <li><strong>Cut / Recomp</strong> — tighten up while staying functional.</li>
+      <li><strong>Game-Time Ready</strong> — short runway, clear deadline, maximum focus.</li>
+    </ul>
+  </section>
+</div>
 </body>
 </html>
