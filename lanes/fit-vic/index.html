@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlightLine Fitness FIT | Capital of NETTOPIA</title>
+
+  <style>
+    :root{
+      --lane-name: "FITNESS";
+      --lane-code: "FIT";
+      --accent: #00FF88;
+      --accent-2: #FFD400;
+
+      --bg: #05070b;
+      --bg-2: #0b1020;
+      --panel: rgba(255,255,255,0.05);
+      --panel-2: rgba(255,255,255,0.08);
+      --text: #eaf2ff;
+      --muted: rgba(234,242,255,0.75);
+      --radius: 18px;
+      --radius-lg: 24px;
+      --shadow: 0 10px 40px rgba(0,0,0,.45);
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --sans: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(1000px 600px at 10% -10%, color-mix(in oklab, var(--accent) 25%, transparent), transparent 60%),
+        radial-gradient(800px 500px at 110% 10%, color-mix(in oklab, var(--accent-2) 25%, transparent), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
+      min-height:100vh;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:20px}
+
+    header{
+      position:sticky; top:0; z-index:50;
+      background:linear-gradient(90deg, rgba(5,7,11,.9), rgba(11,16,32,.7));
+      backdrop-filter: blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:14px 20px;
+    }
+    .brand{display:flex; align-items:center; gap:12px;}
+    .badge{
+      font-family:var(--mono);
+      font-weight:800;
+      padding:6px 10px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#001018;
+      letter-spacing:.08em;
+      font-size:12px;
+      box-shadow:0 0 20px color-mix(in oklab, var(--accent) 50%, transparent);
+    }
+    .title h1{margin:0; font-size:20px;}
+    .title .sub{font-size:12px; color:var(--muted);}
+
+    .nav{display:flex; flex-wrap:wrap; gap:8px;}
+    .nav a{
+      font-size:12px; padding:8px 10px; border-radius:999px;
+      background:var(--panel);
+      border:1px solid rgba(255,255,255,.06);
+      transition:.18s ease;
+    }
+    .nav a:hover{
+      transform:translateY(-1px);
+      border-color:color-mix(in oklab, var(--accent) 60%, transparent);
+      box-shadow:0 0 18px color-mix(in oklab, var(--accent) 30%, transparent);
+    }
+
+    .hero{margin-top:16px; display:grid; grid-template-columns:1.2fr .8fr; gap:14px;}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+
+    .card{
+      background:var(--panel);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius-lg);
+      padding:16px;
+      box-shadow:var(--shadow);
+    }
+    .card h2{margin:0 0 6px 0; font-size:18px;}
+    .card p{margin:0;color:var(--muted); line-height:1.55}
+
+    .statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+    @media(max-width:700px){.statrow{grid-template-columns:1fr}}
+    .stat{
+      background:var(--panel-2);
+      border:1px solid rgba(255,255,255,.08);
+      padding:12px; border-radius:var(--radius);
+      display:flex; flex-direction:column; gap:6px;
+    }
+    .stat .label{font-size:11px;color:var(--muted);letter-spacing:.08em}
+    .stat .value{font-size:18px;font-weight:800}
+
+    .section{margin-top:16px; display:grid; grid-template-columns:repeat(12,1fr); gap:12px;}
+    .col-7{grid-column:span 7} .col-5{grid-column:span 5} .col-12{grid-column:span 12}
+    @media(max-width:900px){.col-7,.col-5{grid-column:span 12}}
+
+    .lane-header{display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:10px;}
+    .lane-chip{
+      font-family:var(--mono); font-size:11px; font-weight:800; letter-spacing:.12em;
+      padding:6px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.1);
+      background:linear-gradient(135deg,
+        color-mix(in oklab, var(--accent) 20%, transparent),
+        color-mix(in oklab, var(--accent-2) 20%, transparent));
+    }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:10px 12px; border-radius:12px; font-weight:700;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#03060c; border:none; cursor:pointer;
+      transition:.18s ease; text-align:center;
+      box-shadow:0 0 18px color-mix(in oklab, var(--accent) 35%, transparent);
+    }
+    .btn:hover{transform:translateY(-1px); filter:saturate(1.1)}
+    .btn.secondary{
+      background:var(--panel-2); color:var(--text);
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:none;
+    }
+
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px;}
+    .pack{
+      background:var(--panel-2);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:14px; padding:12px;
+      display:flex; flex-direction:column; gap:8px;
+    }
+    .pack .pname{font-weight:800}
+    .pack .pdesc{font-size:12px;color:var(--muted);line-height:1.4}
+    .pack .price{font-weight:900; font-family:var(--mono)}
+    .pack .buy{margin-top:auto}
+
+    footer{
+      margin:18px 0 8px; color:var(--muted); font-size:12px;
+      display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px;
+      border-top:1px solid rgba(255,255,255,.08); padding-top:12px;
+    }
+    .tiny{font-size:11px;color:var(--muted)}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <div class="brand">
+      <div class="badge">FIT</div>
+      <div class="title">
+        <h1>FlightLine FITNESS — Go Hard Go Home</h1>
+        <div class="sub">Mycelium901 · Memphis DC Family Lane</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="../../index.html">Mycelium901 Hub</a>
+      <a href="#packs">Stripe Packs</a>
+      <a href="#booking">Book VIC</a>
+      <a href="#proof">Proof Stack</a>
+      <a href="#contact">Gates Desk</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="card">
+      <h2>Lane Mission</h2>
+      <p>
+        Private training and kinetic proof. Every session strengthens the Mycelium901 family grid.
+        Every sale or booking becomes Proof of Motion for NETTOPIA.
+      </p>
+
+      <div class="statrow">
+        <div class="stat">
+          <div class="label">LANE STATUS</div>
+          <div class="value">ACTIVE</div>
+        </div>
+        <div class="stat">
+          <div class="label">MOTION TYPE</div>
+          <div class="value">TRAINING</div>
+        </div>
+        <div class="stat">
+          <div class="label">PROOF OUTPUT</div>
+          <div class="value">FLIGHT PAPERS</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="lane-header">
+        <h2>Quick Actions</h2>
+        <div class="lane-chip">FIT TERMINAL</div>
+      </div>
+      <div style="display:grid;gap:8px">
+        <a class="btn" href="#packs">Buy a Pack</a>
+        <a class="btn secondary" href="#booking">Book VIC</a>
+        <a class="btn secondary" href="#proof">Proof Stack</a>
+      </div>
+      <p class="tiny" style="margin-top:10px">
+        Every action routes into DSX and weekly PC review.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card col-12" id="packs">
+      <div class="lane-header">
+        <h2>Stripe Packs — VIC Fitness</h2>
+        <div class="lane-chip">DSX MOTION FUEL</div>
+      </div>
+
+      <div class="grid">
+        <div class="pack">
+          <div class="pname">Warm-Up Session</div>
+          <div class="pdesc">Quick ignition to start motion.</div>
+          <div class="price">$5</div>
+          <a class="btn buy" href="PASTE_VIC_STRIPE_1">Buy Now</a>
+        </div>
+
+        <div class="pack">
+          <div class="pname">Local Sweat</div>
+          <div class="pdesc">Standard training pack.</div>
+          <div class="price">$10</div>
+          <a class="btn buy" href="PASTE_VIC_STRIPE_2">Buy Now</a>
+        </div>
+
+        <div class="pack">
+          <div class="pname">Corridor Conditioning</div>
+          <div class="pdesc">Serious progression lane.</div>
+          <div class="price">$25</div>
+          <a class="btn buy" href="PASTE_VIC_STRIPE_3">Buy Now</a>
+        </div>
+
+        <div class="pack">
+          <div class="pname">City Shred</div>
+          <div class="pdesc">High-output transformation tier.</div>
+          <div class="price">$50</div>
+          <a class="btn buy" href="PASTE_VIC_STRIPE_4">Buy Now</a>
+        </div>
+
+        <div class="pack">
+          <div class="pname">Network Beast Mode</div>
+          <div class="pdesc">Elite/ongoing package.</div>
+          <div class="price">$100</div>
+          <a class="btn buy" href="PASTE_VIC_STRIPE_5">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card col-7" id="booking">
+      <div class="lane-header">
+        <h2>Book VIC</h2>
+        <div class="lane-chip">CALENDLY</div>
+      </div>
+      <p>Reserve your session. Bookings become Proof entries.</p>
+
+      <div style="margin-top:10px; border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.12); min-height:520px;">
+        <iframe
+          src="PASTE_VIC_CALENDLY"
+          width="100%"
+          height="520"
+          frameborder="0"
+          scrolling="no"
+          title="VIC Calendly"></iframe>
+      </div>
+    </div>
+
+    <div class="card col-5">
+      <div class="lane-header">
+        <h2>Lane Rules</h2>
+        <div class="lane-chip">OPS</div>
+      </div>
+      <ul style="line-height:1.7; color:var(--muted); padding-left:18px">
+        <li>All payments run through Stripe Packs.</li>
+        <li>All bookings are proof entries.</li>
+        <li>Weekly PC Meeting reviews lane performance.</li>
+        <li>Gates Desk routes clients when needed.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card col-12" id="proof">
+      <div class="lane-header">
+        <h2>Proof Stack</h2>
+        <div class="lane-chip">SCAN · MOVE · CUSTODY</div>
+      </div>
+
+      <div class="grid" style="margin-top:10px">
+        <div class="pack">
+          <div class="pname">Scan Log</div>
+          <div class="pdesc">Client entry + route scan record.</div>
+          <a class="btn secondary buy" href="PASTE_VIC_SCAN_FORM">Open Scan Log</a>
+        </div>
+        <div class="pack">
+          <div class="pname">Motion Ledger</div>
+          <div class="pdesc">Tracks Stripe pack purchase + motion proof.</div>
+          <a class="btn secondary buy" href="PASTE_VIC_MOTION_FORM">Open Motion Ledger</a>
+        </div>
+        <div class="pack">
+          <div class="pname">Custody Register</div>
+          <div class="pdesc">Service delivery + follow-up outcome.</div>
+          <a class="btn secondary buy" href="PASTE_VIC_CUSTODY_FORM">Open Custody Register</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card col-12" id="contact">
+      <div class="lane-header">
+        <h2>Gates Desk (Mom)</h2>
+        <div class="lane-chip">ROUTING</div>
+      </div>
+      <p>Need help? The Gates Desk routes you to the correct lane.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+        <a class="btn secondary" href="tel:PASTE_GATES_PHONE">Call Gates Desk</a>
+        <a class="btn secondary" href="mailto:PASTE_GATES_EMAIL">Email Gates Desk</a>
+        <a class="btn" href="../../index.html">Back to Mycelium901 Hub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>FlightLine Mycelium901 Memphis DC → NETTOPIA</div>
+    <div class="tiny">Lane: FITNESS (FIT)</div>
+  </footer>
+</main>
+</body>
+</html>
