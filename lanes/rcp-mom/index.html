@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reception Desk · Lane RCP · Lady J</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/shared.css" />
+  <style>
+    body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:radial-gradient(circle at top,#00bfa633,#02060c 60%);color:#eaf2ff;min-height:100vh;
+      display:flex;justify-content:center;align-items:stretch;}
+    .lane-wrap{max-width:960px;margin:24px auto;padding:16px;border-radius:22px;
+      background:rgba(6,12,16,0.96);border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 22px 60px rgba(0,0,0,.85);}
+    .tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:6px 10px;
+      border-radius:999px;background:linear-gradient(135deg,#ffffff,#00bfa6);color:#021310;
+      display:inline-block;font-weight:800;}
+    h1{margin:10px 0 4px;font-size:22px;}
+    .sub{font-size:13px;opacity:.82;}
+    .meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px;font-size:12px;opacity:.86;}
+    .pill{padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.18);}
+    .actions{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;}
+    .btn{padding:10px 14px;border-radius:12px;border:none;cursor:pointer;font-size:13px;
+      font-weight:700;display:inline-flex;align-items:center;gap:8px;text-decoration:none;}
+    .btn-primary{background:linear-gradient(135deg,#ffffff,#00bfa6);color:#021310;
+      box-shadow:0 0 18px #00bfa666;}
+    .btn-ghost{background:rgba(255,255,255,.04);color:#eaf2ff;border:1px solid rgba(255,255,255,.12);}
+    .panel{margin-top:18px;padding:12px;border-radius:16px;background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.08);font-size:13px;}
+    iframe{border:0;width:100%;border-radius:16px;min-height:320px;}
+    footer{margin-top:18px;font-size:11px;opacity:.7;display:flex;justify-content:space-between;
+      flex-wrap:wrap;gap:8px;}
+  </style>
+</head>
+<body>
+  <main class="lane-wrap">
+    <span class="tag">Lane RCP · Reception Desk</span>
+    <h1>Lady J · Family Routing Grid</h1>
+    <div class="sub">
+      All new people touch this lane first.  
+      Lady J receives them, tags them, and dispatches them to the correct family lane.
+    </div>
 
+    <div class="meta">
+      <div class="pill">Role: Intake & Dispatch</div>
+      <div class="pill">Mode: INTAKE · DISPATCH</div>
+    </div>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="PASTE_RCP_INTAKE_FORM">
+        INTAKE · New Client / Partner
+      </a>
+      <a class="btn btn-ghost" href="PASTE_RCP_DISPATCH_SHEET" target="_blank" rel="noopener">
+        DISPATCH · View Routing Board
+      </a>
+    </div>
+
+    <div class="panel">
+      <strong>Reception Intake Form</strong>
+      <p style="margin:6px 0 10px;">
+        This form collects basic info and reason for contact.  
+        After submission, the record is written to a Sheet and flagged for dispatch.
+      </p>
+      <iframe
+        src="PASTE_RCP_INTAKE_FORM"
+        title="Reception Desk Intake Form">
+      </iframe>
+    </div>
+
+    <footer>
+      <span>No lane is touched before Reception sees it.</span>
+      <span>FlightLine · Lane RCP · Mycelium901</span>
+    </footer>
+  </main>
+</body>
+</html>
