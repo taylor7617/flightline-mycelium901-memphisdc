@@ -2,56 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>HQ · Keith — Key Fob Command · FlightLine HQ</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../../shared.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Keith · Key Fob Command | Pantheon Rail</title>
+  <meta name="description" content="Keith on the F-LINE rail — Key Fob Command seat for Mycelium901 and NETTOPIA.">
+
+  <style>
+    :root{
+      --accent:#FFD166;
+      --accent-2:#00FF88;
+      --bg:#040307;
+      --bg-2:#090712;
+      --panel:rgba(16,8,30,0.9);
+      --panel-2:rgba(22,12,46,0.96);
+      --text:#FFF7E6;
+      --muted:rgba(252,237,209,0.8);
+      --radius:18px;
+      --shadow:0 18px 60px rgba(0,0,0,0.85);
+      --mono:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --sans:system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:var(--sans);
+      color:var(--text);
+      min-height:100vh;
+      background:
+        radial-gradient(900px 600px at 0% 0%,rgba(255,209,102,0.28),transparent 60%),
+        radial-gradient(900px 600px at 100% 100%,rgba(0,255,136,0.28),transparent 60%),
+        linear-gradient(180deg,var(--bg),var(--bg-2));
+      padding:20px;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1050px;margin:0 auto}
+
+    header{
+      display:flex;justify-content:space-between;align-items:center;gap:10px;
+      margin-bottom:18px;
+    }
+    .badge{
+      font-family:var(--mono);
+      font-size:11px;letter-spacing:.2em;
+      padding:6px 10px;border-radius:999px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#130A00;font-weight:900;
+      box-shadow:0 0 24px rgba(255,209,102,0.7);
+    }
+    .hub-link{
+      font-size:12px;padding:7px 11px;border-radius:999px;
+      border:1px solid rgba(255,255,255,0.3);
+      background:rgba(7,4,16,0.95);
+    }
+    .hub-link span{opacity:.75}
+
+    .grid{
+      display:grid;grid-template-columns:1.05fr .95fr;gap:16px;
+    }
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+
+    .card{
+      background:var(--panel);
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.3);
+      padding:16px;
+      box-shadow:var(--shadow);
+    }
+    h1{font-size:26px;margin-bottom:4px;}
+    .sub{font-size:13px;color:var(--muted);margin-bottom:10px}
+
+    .meta{
+      margin-top:8px;
+      display:grid;grid-template-columns:repeat(3,1fr);gap:8px;font-size:12px;
+    }
+    @media(max-width:750px){.meta{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.meta{grid-template-columns:1fr}}
+
+    .meta-item{
+      background:var(--panel-2);
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.32);
+      padding:9px 10px;
+    }
+    .meta-item label{
+      display:block;font-size:11px;color:var(--muted);letter-spacing:.12em;
+      text-transform:uppercase;font-family:var(--mono);margin-bottom:4px;
+    }
+    .meta-item div{font-size:13px;font-weight:700;}
+
+    .image-wrap{
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.32);
+      background:radial-gradient(circle at 10% 0%,rgba(255,209,102,0.3),transparent 55%),
+                 radial-gradient(circle at 100% 100%,rgba(0,255,136,0.3),transparent 55%),
+                 #040307;
+    }
+    .image-wrap img{display:block;width:100%;height:auto;object-fit:cover;}
+
+    .block{
+      margin-top:14px;
+      background:var(--panel);
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.34);
+      padding:14px;
+    }
+    .block h2{font-size:16px;margin-bottom:4px;}
+    .block p{font-size:13px;color:var(--muted);margin-bottom:8px;}
+    ul,ol{margin-left:18px;font-size:13px;color:var(--muted);line-height:1.7}
+  </style>
 </head>
-<body class="lane-page pantheon-page hq-page">
-  <header class="lane-header">
-    <a href="../../index.html" class="lane-back">← Mycelium901 Hub</a>
-    <div class="lane-code-pill">HQ · KEY FOB</div>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="badge">PANTHEON RAIL · HQ</div>
+      <div style="margin-top:6px;font-size:12px;color:var(--muted);font-family:var(--mono);">
+        Keith · Key Fob Command — Capital of NETTOPIA
+      </div>
+    </div>
+    <a class="hub-link" href="../../index.html#arrivals">⟵ Back to Mycelium901 <span>/ Arrivals Board</span></a>
   </header>
 
-  <main class="lane-shell">
-    <section class="lane-hero">
-      <div class="lane-hero-text">
-        <h1>Keith — Key Fob Command</h1>
-        <p class="lane-tagline">
-          Central command key — holds the master fob for Mycelium901, Wolfpack Planetarium,
-          BTC Traveler, and BTEN Towers.
-        </p>
-
-        <div class="lane-buttons">
-          <a class="btn primary"
-             href="../../index.html">
-            Open Mycelium901 Hub
-          </a>
-
-          <a class="btn secondary"
-             href="https://taylor7617.github.io/wolfpack-plantarium-museum/"
-             target="_blank" rel="noopener">
-            Open Wolfpack Planetarium
-          </a>
-
-          <a class="btn ghost"
-             href="https://www.google.com/maps/d/edit?mid=1-0hzlDqdjnbGTLPvbIf7WHHX2yF4owk&usp=sharing"
-             target="_blank" rel="noopener">
-            Open BTC Traveler / BTEN Towers
-          </a>
-        </div>
-
-        <p class="lane-note">
-          HQ doesn’t sell sessions. It controls <strong>access, proof, and upgrades</strong>  
-          across every tower, corridor, lane, and globe in the system.
-        </p>
+  <section class="grid">
+    <div class="card">
+      <h1>Key Fob to the Whole Grid</h1>
+      <div class="sub">
+        This seat holds the <strong>master decisions</strong> about where FlightLine expands,
+        who is invited, and which lanes or towers get powered on next.
       </div>
 
-      <figure class="lane-hero-media">
-        <img src="../../assets/img/keith-keyfob.png"
-             alt="Key fob aircraft representing FlightLine HQ command" />
-        <figcaption>HQ Seat — Key Fob on the tarmac.</figcaption>
-      </figure>
-    </section>
-  </main>
+      <div class="meta">
+        <div class="meta-item">
+          <label>Role</label>
+          <div>Architect · Steward · Command</div>
+        </div>
+        <div class="meta-item">
+          <label>Focus</label>
+          <div>People First · Proof Always</div>
+        </div>
+        <div class="meta-item">
+          <label>Span</label>
+          <div>Mycelium901 → NETTOPIA → Beyond</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="image-wrap">
+      <img src="../../assets/img/keith-keyfob.png" alt="Keith Key Fob Command pantheon artwork">
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>What This Seat Decides</h2>
+    <ul>
+      <li>Which cities, corridors, and towers get activated next.</li>
+      <li>How DSX pricing, packs, and credit are used to protect people.</li>
+      <li>When to pause, slow, or accelerate parts of the grid.</li>
+      <li>Who gets steward roles, lanes, and Pantheon positions.</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>Connection to Wolfpack & Planetarium</h2>
+    <p>
+      Wolfpack Planetarium, BTEN Towers, and BTC Traveler all report here.
+      This seat keeps the long arc in view while the family and captains
+      work their lanes day-to-day.
+    </p>
+  </section>
+</div>
 </body>
 </html>
