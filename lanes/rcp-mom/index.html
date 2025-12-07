@@ -2,46 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RCP · Reception Desk — Family Routing Grid</title>
-  <link rel="stylesheet" href="../shared.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Reception Desk — Lady J | Mycelium901</title>
+  <meta name="description" content="Reception Desk with Lady J — intake, care, and routing to the correct FlightLine lane inside Mycelium901.">
+
+  <style>
+    :root{
+      --accent:#FFFFFF;
+      --accent-2:#00BFA6;
+      --bg:#020708;
+      --bg-2:#041012;
+      --panel:rgba(5,18,20,0.82);
+      --panel-2:rgba(8,26,29,0.9);
+      --text:#E6FFFB;
+      --muted:rgba(214,244,239,0.82);
+      --radius:18px;
+      --shadow:0 18px 60px rgba(0,0,0,0.75);
+      --mono:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --sans:system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:var(--sans);
+      color:var(--text);
+      min-height:100vh;
+      background:
+        radial-gradient(900px 600px at 0% 0%,rgba(255,255,255,0.18),transparent 60%),
+        radial-gradient(900px 600px at 100% 100%,rgba(0,191,166,0.25),transparent 60%),
+        linear-gradient(180deg,var(--bg),var(--bg-2));
+      padding:20px;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1050px;margin:0 auto}
+
+    header{
+      display:flex;justify-content:space-between;align-items:center;gap:10px;
+      margin-bottom:18px;
+    }
+    .lane-tag{
+      font-family:var(--mono);
+      font-size:11px;letter-spacing:.18em;
+      padding:6px 10px;border-radius:999px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#00110D;font-weight:900;
+      box-shadow:0 0 22px rgba(0,191,166,0.6);
+    }
+    .hub-link{
+      font-size:12px;padding:7px 11px;border-radius:999px;
+      border:1px solid rgba(255,255,255,0.2);
+      background:rgba(1,8,9,0.85);
+    }
+    .hub-link span{opacity:.75}
+
+    .grid{
+      display:grid;grid-template-columns:1.05fr .95fr;gap:16px;
+    }
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+
+    .card{
+      background:var(--panel);
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.16);
+      padding:16px;
+      box-shadow:var(--shadow);
+    }
+    h1{font-size:26px;margin-bottom:4px;}
+    .sub{font-size:13px;color:var(--muted);margin-bottom:10px}
+
+    .btn-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+      gap:8px;margin-top:10px;
+    }
+    .btn{
+      display:flex;flex-direction:column;align-items:flex-start;
+      padding:10px 11px;border-radius:14px;
+      background:var(--panel-2);
+      border:1px solid rgba(255,255,255,0.18);
+      font-size:12px;cursor:pointer;
+    }
+    .btn strong{font-size:13px;}
+    .btn span{font-size:11px;color:var(--muted);margin-top:2px;}
+
+    .image-wrap{
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.18);
+      background:radial-gradient(circle at 0% 0%,rgba(255,255,255,0.22),transparent 55%),
+                 radial-gradient(circle at 100% 100%,rgba(0,191,166,0.24),transparent 55%),
+                 #020708;
+    }
+    .image-wrap img{display:block;width:100%;height:auto;object-fit:cover;}
+
+    .block{
+      margin-top:14px;
+      background:var(--panel);
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.22);
+      padding:14px;
+    }
+    .block h2{font-size:16px;margin-bottom:4px;}
+    .block p{font-size:13px;color:var(--muted);margin-bottom:8px;}
+    ul,ol{margin-left:18px;font-size:13px;color:var(--muted);line-height:1.7}
+  </style>
 </head>
 <body>
-  <div class="page">
-
-    <div class="header">
-      <div class="tag">RCP · RECEPTION</div>
-      <div class="title-block">
-        <h1>Reception Desk — Family Routing Grid</h1>
-        <div class="sub">
-          Lady J · First contact · Intake · Routes clients to the correct lane.
-        </div>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="lane-tag">LANE RCP · LADY J</div>
+      <div style="margin-top:6px;font-size:12px;color:var(--muted);font-family:var(--mono);">
+        Reception Desk — Intake & Routing · Mycelium901
       </div>
     </div>
+    <a class="hub-link" href="../../index.html#lanes">⟵ Back to Mycelium901 <span>/ Family Lanes</span></a>
+  </header>
 
-    <div class="hero">
-      <img src="../../assets/img/ladyj-bitcoin-island-plane.png" alt="Lady J reception aircraft on Bitcoin Island" />
-      <div class="hero-overlay">
-        <strong>RCP Desk</strong> — Single intake point for all FlightLine family services.
-      </div>
-    </div>
-
+  <section class="grid">
     <div class="card">
-      <h2>Intake &amp; Routing</h2>
-      <p>Clients come here first when they don’t know which lane to choose.</p>
-      <div class="btn-row">
-        <a class="btn" href="PASTE_RCP_INTAKE_FORM" target="_blank" rel="noopener">New Client Intake Form</a>
-        <a class="btn secondary" href="PASTE_RCP_ROUTING_SHEET" target="_blank" rel="noopener">View Routing Sheet</a>
-        <a class="btn secondary" href="PASTE_RCP_CALENDLY" target="_blank" rel="noopener">Book Reception Call</a>
+      <h1>“Tell Me What You Need. I’ll Seat You.”</h1>
+      <div class="sub">
+        This lane is where <strong>people, not tech, come first</strong>.
+        Lady J listens to what you’re actually trying to fix and
+        routes you to the right lane, DSX Pack, or meeting.
       </div>
-      <div class="meta">RECEPTION → FIT · RAD · BSM · DRE AS NEEDED</div>
+
+      <div class="btn-grid">
+        <a class="btn" href="PASTE_RCP_SIMPLE_FORM" target="_blank" rel="noopener">
+          <strong>I don’t know where to start</strong>
+          <span>Answer a few questions. We’ll route you.</span>
+        </a>
+
+        <a class="btn" href="../fit-vic/index.html">
+          <strong>I need physical training</strong>
+          <span>Send me to FlightLine Fitness with Vic.</span>
+        </a>
+
+        <a class="btn" href="../rad-von/index.html">
+          <strong>I need audio / radio help</strong>
+          <span>Signal, stories, or public sound.</span>
+        </a>
+
+        <a class="btn" href="../bsm-tashawnda/index.html">
+          <strong>My operations are messy</strong>
+          <span>Tasks, inbox, schedule, and systems.</span>
+        </a>
+
+        <a class="btn" href="../gate-angel/index.html">
+          <strong>I want digital real estate</strong>
+          <span>QR corridors, listings, towers, or maps.</span>
+        </a>
+      </div>
     </div>
 
-    <div class="footer">
-      <span>RCP Lane · Mycelium901 Memphis DC</span>
-      <a href="../../index.html">← Back to Mycelium901 Hub</a>
+    <div class="image-wrap">
+      <img src="../../assets/img/ladyj-bitcoin-island-plane.png" alt="Reception Desk — Lady J lane artwork">
     </div>
+  </section>
 
-  </div>
+  <section class="block">
+    <h2>What Happens After You Reach Reception</h2>
+    <ul>
+      <li>Your message is read like a real human, not a bot script.</li>
+      <li>You’re matched to the lane that can actually solve your problem.</li>
+      <li>If needed, a short PC-30 style consult is booked.</li>
+      <li>Your route is logged for Proof so no motion gets lost.</li>
+    </ul>
+  </section>
+</div>
 </body>
 </html>
