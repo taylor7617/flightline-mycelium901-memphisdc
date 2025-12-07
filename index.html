@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FlightLine Mycelium901 Memphis DC | Capital of NETTOPIA</title>
-  <meta name="description" content="FlightLine Mycelium901 Memphis DC Family Grid — DSX Packs, Gates, Proof Stack, and Family Lanes powering NETTOPIA.">
+  <meta name="description" content="FlightLine Mycelium901 Memphis DC Family Grid — DSX Packs, Gates, Proof Stack, Planetarium, and Family Lanes powering NETTOPIA.">
 
   <style>
     :root{
@@ -149,6 +149,7 @@
       background:linear-gradient(135deg,var(--accent),var(--accent-2));
       color:#03060c;border:none;cursor:pointer;transition:.18s ease;text-align:center;
       box-shadow:0 0 18px color-mix(in oklab,var(--accent) 38%,transparent);
+      font-size:13px;
     }
     .btn:hover{transform:translateY(-1px);filter:saturate(1.08)}
     .btn.secondary{
@@ -183,7 +184,7 @@
     .lane-sub{font-size:12px;color:var(--muted);line-height:1.5}
     .lane-meta{font-size:11px;color:var(--muted);letter-spacing:.06em}
 
-    /* ======= DEPARTURES BOARD ======= */
+    /* ======= DEPARTURES & ARRIVALS BOARD ======= */
     table{
       width:100%;border-collapse:separate;border-spacing:0 8px;font-size:13px;
     }
@@ -218,6 +219,29 @@
     .pack .price{font-weight:900;font-family:var(--mono)}
     .pack .buy{margin-top:auto}
 
+    /* ======= PLANETARIUM ======= */
+    .planetarium-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:10px;
+      margin-top:8px;
+    }
+    .planet-card iframe{
+      border:0;
+      width:100%;
+      border-radius:16px;
+      min-height:260px;
+    }
+    .planet-title{
+      font-weight:700;
+      margin-bottom:4px;
+    }
+    .planet-desc{
+      font-size:12px;
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+
     footer{
       margin:18px 0 8px;color:var(--muted);font-size:12px;
       display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;
@@ -242,7 +266,9 @@
     <nav class="nav">
       <a href="#lanes">Family Lanes</a>
       <a href="#packs">DSX Packs</a>
-      <a href="#board">Gates Board</a>
+      <a href="#board">Departures Board</a>
+      <a href="#arrivals">Arrivals Board</a>
+      <a href="#planetarium">Planetarium Vault</a>
       <a href="#proof">Proof Stack</a>
       <a href="#pc">PC Meeting</a>
       <a href="#contact">Contact</a>
@@ -257,8 +283,10 @@
     <div class="card">
       <h2>WHAT THIS PAGE DOES</h2>
       <p>
-        Shows **Mycelium901 Family Lanes** like a terminal menu, lists **FlightLine Gates** like a departures screen,
-        exposes the three-layer **Proof Stack**, and routes clients into Stripe/Calendly/Forms for each lane.
+        Shows <strong>Mycelium901 Family Lanes</strong> like a terminal menu, lists
+        <strong>FlightLine Gates</strong> like a departures screen, exposes the three-layer
+        <strong>Proof Stack</strong>, opens the <strong>Wolfpack Planetarium Vault</strong>,
+        and routes clients into Stripe / Calendly / Forms for each lane.
       </p>
 
       <div class="statrow">
@@ -277,6 +305,7 @@
       <div style="display:grid;gap:8px">
         <a class="btn" href="#lanes">Enter Family Lanes</a>
         <a class="btn secondary" href="#packs">Buy DSX Pack</a>
+        <a class="btn secondary" href="#planetarium">Open Planetarium Vault</a>
         <a class="btn secondary" href="#proof">Open Proof Stack</a>
       </div>
       <p class="tiny" style="margin-top:10px">
@@ -296,7 +325,7 @@
       <div class="lanes-grid">
 
         <!-- VIC FITNESS -->
-        <a class="lane-card" href="lanes/fit-vic/index.html">
+        <a class="lane-card" href="/lanes/fit-vic/index.html">
           <div class="lane-badge" style="background:linear-gradient(135deg,#00FF88,#FFD166);">FIT</div>
           <div class="lane-title">FlightLine Fitness — Go Hard Go Home</div>
           <div class="lane-sub">Vic · Private Training · Kinetic Proof</div>
@@ -308,10 +337,10 @@
         </a>
 
         <!-- VON RADIO -->
-        <a class="lane-card" href="lanes/rad-von/index.html">
+        <a class="lane-card" href="/lanes/rad-von/index.html">
           <div class="lane-badge" style="background:linear-gradient(135deg,#FF3D9A,#7A00FF);">RAD</div>
           <div class="lane-title">FlightLine Radio — The Sound of the Grid</div>
-          <div class="lane-sub">Von · Music on USB/CD · Sonic Motion</div>
+          <div class="lane-sub">Von · FlightLine Public Records · Sonic Motion</div>
           <div class="lane-meta">Lane Code: RAD · Status: Active</div>
           <div style="display:flex;gap:6px;margin-top:6px">
             <span class="status">BUY</span>
@@ -320,7 +349,7 @@
         </a>
 
         <!-- TASHAWNDA BASEMENT -->
-        <a class="lane-card" href="lanes/bsm-tashawnda/index.html">
+        <a class="lane-card" href="/lanes/bsm-tashawnda/index.html">
           <div class="lane-badge" style="background:linear-gradient(135deg,#00C2FF,#FF8C00);">BSM</div>
           <div class="lane-title">FlightLine Basement — The Engine Room</div>
           <div class="lane-sub">TaShawnda · Virtual Assistant · Ops Control</div>
@@ -332,10 +361,10 @@
         </a>
 
         <!-- MOM RECEPTION GRID -->
-        <a class="lane-card" href="lanes/rcp-mom/index.html">
+        <a class="lane-card" href="/lanes/rcp-mom/index.html">
           <div class="lane-badge" style="background:linear-gradient(135deg,#FFFFFF,#00BFA6);">RCP</div>
           <div class="lane-title">Reception Desk — Family Routing Grid</div>
-          <div class="lane-sub">Mom · Intake · Routes clients to correct lane</div>
+          <div class="lane-sub">Lady J (Mom) · Intake · Routes clients to correct lane</div>
           <div class="lane-meta">Lane Code: RCP · Status: Active</div>
           <div style="display:flex;gap:6px;margin-top:6px">
             <span class="status">INTAKE</span>
@@ -344,7 +373,7 @@
         </a>
 
         <!-- ANGEL GATES / DRE -->
-        <a class="lane-card" href="lanes/gate-angel/index.html">
+        <a class="lane-card" href="/lanes/gate-angel/index.html">
           <div class="lane-badge" style="background:linear-gradient(135deg,#19E6A3,#FFD166);">DRE</div>
           <div class="lane-title">FlightLine Gates — Digital Real Estate</div>
           <div class="lane-sub">Angel · Corridor Leasing · Listings · Gate Ops</div>
@@ -434,34 +463,134 @@
           <tr class="board">
             <td>FIT</td><td>TRAINING</td><td>Vic Fitness</td><td>FIT</td>
             <td><span class="status">ACTIVE</span></td>
-            <td><a class="btn mini" href="lanes/fit-vic/index.html">View</a></td>
+            <td><a class="btn mini" href="/lanes/fit-vic/index.html">View</a></td>
           </tr>
 
           <tr class="board">
             <td>RAD</td><td>AUDIO</td><td>Von Radio</td><td>RAD</td>
             <td><span class="status">ACTIVE</span></td>
-            <td><a class="btn mini" href="lanes/rad-von/index.html">View</a></td>
+            <td><a class="btn mini" href="/lanes/rad-von/index.html">View</a></td>
           </tr>
 
           <tr class="board">
             <td>BSM</td><td>OPS</td><td>TaShawnda Basement</td><td>BSM</td>
             <td><span class="status">ACTIVE</span></td>
-            <td><a class="btn mini" href="lanes/bsm-tashawnda/index.html">View</a></td>
+            <td><a class="btn mini" href="/lanes/bsm-tashawnda/index.html">View</a></td>
           </tr>
 
           <tr class="board">
             <td>RCP</td><td>RECEPTION</td><td>Mom Routing Desk</td><td>RCP</td>
             <td><span class="status">ACTIVE</span></td>
-            <td><a class="btn mini" href="lanes/rcp-mom/index.html">View</a></td>
+            <td><a class="btn mini" href="/lanes/rcp-mom/index.html">View</a></td>
           </tr>
 
           <tr class="board">
             <td>DRE</td><td>GATES</td><td>Angel Digital Real Estate</td><td>DRE</td>
             <td><span class="status">ACTIVE</span></td>
-            <td><a class="btn mini" href="lanes/gate-angel/index.html">View</a></td>
+            <td><a class="btn mini" href="/lanes/gate-angel/index.html">View</a></td>
           </tr>
         </tbody>
       </table>
+    </div>
+  </section>
+
+  <!-- ================== ARRIVALS / COMMAND BOARD ================== -->
+  <section class="section">
+    <div class="card col-12" id="arrivals">
+      <div class="lane-header">
+        <h2>FLIGHTLINE BOARD — ARRIVALS</h2>
+        <div class="lane-chip">F-LINE · COMMAND</div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>GATE</th>
+            <th>SECTION</th>
+            <th>ROUTE</th>
+            <th>CODE</th>
+            <th>STATUS</th>
+            <th>VIEW</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- JT · FlightLine Infinite -->
+          <tr class="board">
+            <td>FLI</td>
+            <td>INFRASTRUCTURE</td>
+            <td>JT · FlightLine Infinite</td>
+            <td>FLI</td>
+            <td><span class="status">ON STATION</span></td>
+            <td><a class="btn mini" href="/pantheon/jt/index.html">View</a></td>
+          </tr>
+
+          <!-- Keith · Key Fob Command -->
+          <tr class="board">
+            <td>HQ</td>
+            <td>COMMAND</td>
+            <td>Keith · Key Fob Control</td>
+            <td>HQ</td>
+            <td><span class="status">ON STATION</span></td>
+            <td><a class="btn mini" href="/pantheon/keith/index.html">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="tiny" style="margin-top:10px">
+        Arrivals show who is seated on the <strong>F-LINE rail</strong> —  
+        Infinite infrastructure (JT) and Key Fob command (HQ).
+      </p>
+    </div>
+  </section>
+
+  <!-- ================== WOLFPACK PLANETARIUM VAULT ================== -->
+  <section class="section">
+    <div class="card col-12" id="planetarium">
+      <div class="lane-header">
+        <h2>WOLFPACK PLANETARIUM — VAULT OF GLOBES</h2>
+        <div class="lane-chip">GLOBES · BTC TRAVELER · BTEN TOWERS</div>
+      </div>
+      <p>
+        This vault holds the live <strong>digital globes</strong> for Wolfpack and BTC Traveler missions.  
+        Each globe is a running world: Mycelium corridors, BTEN Towers, and future routes under construction.
+      </p>
+
+      <div class="planetarium-grid">
+        <div class="planet-card pack">
+          <div class="planet-title">Wolfpack Planetarium Museum</div>
+          <div class="planet-desc">
+            The first Digital Planetarium &amp; Leasing Museum — family globes, active worlds,
+            and reserved plates for Captains and Division support wings.
+          </div>
+          <iframe
+            src="https://www.google.com/maps/d/u/5/embed?mid=14Sl2Gec79x4JjCCqQY4BTaA15FZ8XLI"
+            title="Wolfpack Planetarium Museum">
+          </iframe>
+          <a class="btn secondary buy"
+             href="https://taylor7617.github.io/wolfpack-plantarium-museum/"
+             target="_blank" rel="noopener">
+            Open Wolfpack Planetarium Site
+          </a>
+        </div>
+
+        <div class="planet-card pack">
+          <div class="planet-title">FlightLine 25/8 · BTC Traveler &amp; BTEN Towers</div>
+          <div class="planet-desc">
+            The 25/8 mission grid — BTC Traveler routes and BTEN Tower placements that
+            extend the FlightLine beyond normal time, locking circulation into place.
+          </div>
+          <iframe
+            src="https://www.google.com/maps/d/u/0/embed?mid=1-0hzlDqdjnbGTLPvbIf7WHHX2yF4owk"
+            title="BTC Traveler &amp; BTEN Towers">
+          </iframe>
+          <a class="btn secondary buy"
+             href="https://www.google.com/maps/d/edit?mid=1-0hzlDqdjnbGTLPvbIf7WHHX2yF4owk&usp=sharing"
+             target="_blank" rel="noopener">
+            Open BTC Traveler / BTEN Towers Map
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -527,8 +656,8 @@
       <ul style="line-height:1.7;color:var(--muted);padding-left:18px">
         <li>All lane payments flow through Stripe Packs.</li>
         <li>All bookings are Proof Stack entries.</li>
-        <li>Reception (Mom) routes new clients.</li>
-        <li>Gates/DRE (Angel) manages corridor leasing.</li>
+        <li>Reception (Lady J) routes new clients.</li>
+        <li>Gates / DRE (Angel) manages corridor leasing.</li>
         <li>PC-30 meeting handles upgrades and enforcement.</li>
       </ul>
     </div>
@@ -545,7 +674,7 @@
       <p>Need help or partnership routing? Contact HQ.</p>
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
         <a class="btn secondary" href="tel:PASTE_HQ_PHONE">Call HQ</a>
-        <a class="btn secondary" href="mailto:PASTE_HQ_EMAIL">Email HQ</a>
+        <a class="btn secondary" href="mailto:taylor@theflightlinehq.com">Email HQ</a>
         <a class="btn" href="#lanes">Family Lanes</a>
       </div>
     </div>
@@ -553,8 +682,12 @@
 
   <footer>
     <div>FlightLine Mycelium901 Memphis DC → NETTOPIA</div>
-    <div class="tiny">5 Lanes Active · DSX Motion Fuel · Proof Stack Live</div>
+    <div class="tiny">5 Lanes Active · DSX Motion Fuel · Proof Stack Live · Planetarium Vault Online</div>
   </footer>
+
+</main>
+</body>
+</html>
 
 </main>
 </body>
