@@ -2,59 +2,202 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RAD · FlightLine Radio — The Sound of the Grid</title>
-  <link rel="stylesheet" href="../shared.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>FlightLine Radio — Von | Mycelium901</title>
+  <meta name="description" content="FlightLine Radio with Von — sound of the grid, public records, and sonic motion for Mycelium901.">
+
+  <style>
+    :root{
+      --accent:#FF3D9A;
+      --accent-2:#7A00FF;
+      --bg:#050214;
+      --bg-2:#020008;
+      --panel:rgba(10,0,32,0.7);
+      --panel-2:rgba(25,0,60,0.85);
+      --text:#F7EBFF;
+      --muted:rgba(244,224,255,0.75);
+      --radius:18px;
+      --shadow:0 18px 60px rgba(0,0,0,0.8);
+      --mono:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --sans:system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:var(--sans);
+      color:var(--text);
+      min-height:100vh;
+      background:
+        radial-gradient(900px 600px at 0% 0%,rgba(255,61,154,0.28),transparent 60%),
+        radial-gradient(900px 600px at 100% 100%,rgba(122,0,255,0.26),transparent 60%),
+        linear-gradient(180deg,var(--bg),var(--bg-2));
+      padding:20px;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1050px;margin:0 auto}
+
+    header{
+      display:flex;justify-content:space-between;align-items:center;gap:10px;
+      margin-bottom:18px;
+    }
+    .lane-tag{
+      font-family:var(--mono);
+      font-size:11px;letter-spacing:.2em;
+      padding:6px 10px;border-radius:999px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#140015;font-weight:900;
+      box-shadow:0 0 26px rgba(255,61,154,0.6);
+    }
+    .hub-link{
+      font-size:12px;padding:7px 11px;border-radius:999px;
+      border:1px solid rgba(255,255,255,0.2);
+      background:rgba(5,0,25,0.7);
+    }
+    .hub-link span{opacity:.75}
+
+    .grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:16px;
+    }
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+
+    .card{
+      background:var(--panel);
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.18);
+      padding:16px;
+      box-shadow:var(--shadow);
+    }
+    h1{font-size:26px;margin-bottom:4px;}
+    .sub{font-size:13px;color:var(--muted);margin-bottom:10px}
+
+    .btn-row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:9px 13px;border-radius:12px;font-size:13px;font-weight:800;
+      border:none;cursor:pointer;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#140015;
+      box-shadow:0 0 20px rgba(255,61,154,0.7);
+    }
+    .btn.secondary{
+      background:rgba(5,0,25,0.8);
+      color:var(--text);
+      box-shadow:none;
+      border:1px solid rgba(255,255,255,0.22);
+    }
+
+    .audio-shell{
+      margin-top:10px;
+      background:var(--panel-2);
+      border-radius:16px;
+      padding:12px;
+      border:1px solid rgba(255,255,255,0.2);
+      font-size:13px;
+    }
+    .audio-shell h3{font-size:14px;margin-bottom:4px;}
+    .audio-shell p{font-size:12px;color:var(--muted);margin-bottom:6px;}
+
+    .fake-player{
+      margin-top:6px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.35);
+      padding:7px 10px;
+      display:flex;align-items:center;gap:8px;
+      font-size:12px;
+    }
+    .dot{
+      width:9px;height:9px;border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 10px rgba(255,61,154,0.8);
+    }
+
+    .image-wrap{
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.2);
+      background:radial-gradient(circle at 20% 0%,rgba(255,61,154,0.22),transparent 55%),
+                 radial-gradient(circle at 100% 100%,rgba(122,0,255,0.22),transparent 55%),
+                 #050214;
+    }
+    .image-wrap img{width:100%;display:block;object-fit:cover;}
+
+    .block{
+      margin-top:14px;
+      background:var(--panel);
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.2);
+      padding:14px;
+    }
+    .block h2{font-size:16px;margin-bottom:4px;}
+    .block p{font-size:13px;color:var(--muted);margin-bottom:8px;}
+    ul,ol{margin-left:18px;font-size:13px;color:var(--muted);line-height:1.7}
+  </style>
 </head>
 <body>
-  <div class="page">
+<div class="wrap">
+  <header>
+    <div>
+      <div class="lane-tag">LANE RAD · VON</div>
+      <div style="margin-top:6px;font-size:12px;color:var(--muted);font-family:var(--mono);">
+        FlightLine Radio — Sound of the Grid · Mycelium901 Public Records
+      </div>
+    </div>
+    <a class="hub-link" href="../../index.html#lanes">⟵ Back to Mycelium901 <span>/ Family Lanes</span></a>
+  </header>
 
-    <div class="header">
-      <div class="tag">RAD · AUDIO</div>
-      <div class="title-block">
-        <h1>FlightLine Radio — The Sound of the Grid</h1>
-        <div class="sub">
-          Von · FlightLine Public Records · Sonic Motion · Digital releases instead of CDs/USBs.
+  <section class="grid">
+    <div class="card">
+      <h1>The Soundtrack of Motion</h1>
+      <div class="sub">
+        This lane turns <strong>stories, launches, and corridors</strong> into audio logs —
+        FlightLine announcements, interviews, and city signals.
+      </div>
+
+      <div class="btn-row">
+        <a class="btn" href="PASTE_VON_BOOKING_LINK" target="_blank" rel="noopener">Book Recording Slot</a>
+        <a class="btn secondary" href="PASTE_VON_INTAKE_FORM" target="_blank" rel="noopener">Submit Story / Track</a>
+      </div>
+
+      <div class="audio-shell">
+        <h3>Now Playing · Sample Broadcast</h3>
+        <p>
+          Preview the style of a FlightLine Radio drop — clean, calm, and high authority.
+          Your brand, lane, or corridor gets this treatment.
+        </p>
+        <div class="fake-player">
+          <div class="dot"></div>
+          <div style="flex:1;">FLIGHTLINE / MYCELIUM901 / PUBLIC SIGNAL</div>
+          <div style="font-family:var(--mono);font-size:11px;opacity:.8;">01:24</div>
         </div>
       </div>
     </div>
 
-    <div class="hero">
-      <img src="../../assets/img/von-yellow-plane.png" alt="Von's FlightLine Radio aircraft" />
-      <div class="hero-overlay">
-        <strong>RAD Gate</strong> — Music uploads, FlightLine public records, and platform links.
-      </div>
+    <div class="image-wrap">
+      <img src="../../assets/img/von-yellow-plane.png" alt="FlightLine Radio — Von lane artwork">
     </div>
+  </section>
 
-    <div class="card">
-      <h2>Release &amp; Motion</h2>
-      <p>
-        Von uploads once into Google Vids / audio vault.  
-        From here, FlightLine routes it out to platforms and ties it into DSX motion.
-      </p>
-      <div class="btn-row">
-        <a class="btn" href="PASTE_RAD_RELEASE_FORM" target="_blank" rel="noopener">Upload New Track</a>
-        <a class="btn secondary" href="PASTE_RAD_GOOGLE_VIDS" target="_blank" rel="noopener">Open FlightLine Radio Vault</a>
-        <a class="btn secondary" href="PASTE_RAD_PUBLIC_PLAYLIST" target="_blank" rel="noopener">Public Playlist / Station</a>
-      </div>
-      <div class="meta">ALL RELEASES LOGGED INTO SCAN LOG · MOTION LEDGER</div>
-    </div>
+  <section class="block">
+    <h2>What FlightLine Radio Can Do For You</h2>
+    <ul>
+      <li><strong>Launch Announcements</strong> — new lanes, towers, corridors, and campaigns.</li>
+      <li><strong>Founder / Operator Interviews</strong> — long-form or short bursts of clarity.</li>
+      <li><strong>City Signals</strong> — public education about what the grid is doing.</li>
+      <li><strong>Proof Audio</strong> — receipts in sound form that match the Motion Ledger.</li>
+    </ul>
+  </section>
 
-    <div class="card">
-      <h2>Linked Systems</h2>
-      <p>RAD keeps audio in circulation, not on dusty CDs.</p>
-      <ul style="margin:0 0 6px 18px;padding:0;font-size:13px;color:var(--muted);">
-        <li>Uploads: Google Vids project + Drive folder.</li>
-        <li>Distribution: Link to platforms (Suno, Spotify, etc.).</li>
-        <li>Revenue: DSX Packs and Stripe splits.</li>
-      </ul>
-    </div>
-
-    <div class="footer">
-      <span>RAD Lane · Mycelium901 Memphis DC</span>
-      <a href="../../index.html">← Back to Mycelium901 Hub</a>
-    </div>
-
-  </div>
+  <section class="block">
+    <h2>How a Recording Session Flows</h2>
+    <ol>
+      <li>You fill out the intake with your goal and key points.</li>
+      <li>Von builds the run-of-show and question set.</li>
+      <li>Recording happens live or remote.</li>
+      <li>Audio is cleaned, labeled, and logged as a Proof entry.</li>
+      <li>You receive share links and routes into other FlightLine lanes.</li>
+    </ol>
+  </section>
+</div>
 </body>
 </html>
