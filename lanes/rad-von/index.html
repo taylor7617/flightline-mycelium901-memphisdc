@@ -2,99 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>FlightLine Radio · Lane RAD · Von</title>
+  <title>RAD · FlightLine Public Records — Von Radio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/shared.css" />
-  <style>
-    /* same base styles as template, slightly warmer bg */
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #ffd16633, #120306 60%);
-      color: #eaf2ff;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-    }
-    .lane-wrap {max-width: 960px;margin:24px auto;padding:16px;border-radius:22px;
-      background:rgba(12,8,16,0.96);border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 22px 60px rgba(0,0,0,.85);}
-    .tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:6px 10px;
-      border-radius:999px;background:linear-gradient(135deg,#ffd166,#ff3d9a);color:#210701;
-      display:inline-block;font-weight:800;}
-    h1{margin:10px 0 4px;font-size:22px;letter-spacing:.04em;}
-    .sub{font-size:13px;opacity:.82;}
-    .meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px;font-size:12px;opacity:.86;}
-    .pill{padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.18);}
-    .actions{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;}
-    .btn{padding:10px 14px;border-radius:12px;border:none;cursor:pointer;font-size:13px;
-      font-weight:700;display:inline-flex;align-items:center;gap:8px;text-decoration:none;}
-    .btn-primary{background:linear-gradient(135deg,#ffd166,#ff3d9a);color:#260801;
-      box-shadow:0 0 18px #ffd16666;}
-    .btn-ghost{background:rgba(255,255,255,.04);color:#eaf2ff;border:1px solid rgba(255,255,255,.12);}
-    .panel{margin-top:18px;padding:12px;border-radius:16px;background:rgba(255,255,255,0.03);
-      border:1px solid rgba(255,255,255,0.08);font-size:13px;}
-    iframe{border:0;width:100%;border-radius:16px;min-height:320px;}
-    footer{margin-top:18px;font-size:11px;opacity:.7;display:flex;justify-content:space-between;
-      flex-wrap:wrap;gap:8px;}
-  </style>
+  <link rel="stylesheet" href="../../shared.css" />
 </head>
-<body>
-  <main class="lane-wrap">
-    <span class="tag">Lane RAD · FlightLine Radio</span>
-    <h1>Von · FlightLine Public Records</h1>
-    <div class="sub">
-      This lane turns Suno tracks and family audio into **FlightLine Radio**.  
-      CD → USB → Google Vids → embedded across the grid.
-    </div>
+<body class="lane-page rad-lane">
+  <header class="lane-header">
+    <a href="../../index.html" class="lane-back">← Mycelium901 Hub</a>
+    <div class="lane-code-pill">RAD · AUDIO</div>
+  </header>
 
-    <div class="meta">
-      <div class="pill">Role: Radio & Sound Grid</div>
-      <div class="pill">Source: 🛫 FlightLine Public Records · Suno</div>
-      <div class="pill">Mode: BUY · COLLAB</div>
-    </div>
+  <main class="lane-shell">
+    <section class="lane-hero">
+      <div class="lane-hero-text">
+        <h1>FlightLine Public Records — The Sound of the Grid</h1>
+        <p class="lane-tagline">
+          Von · Master of the airwaves · Overseer of all new FlightLine Public Records drops.
+        </p>
 
-    <div class="actions">
-      <!-- BUY = Stripe product / bundle link (placeholder) -->
-      <a class="btn btn-primary" href="PASTE_RAD_STRIPE_CHECKOUT">
-        BUY · FlightLine Radio Pack
-      </a>
-      <!-- COLLAB = contact Von / form -->
-      <a class="btn btn-ghost" href="mailto:taylor@theflightlinehq.com?subject=FlightLine%20Radio%20Collab">
-        COLLAB · Send Stems / Idea
-      </a>
-    </div>
+        <div class="lane-buttons">
+          <a class="btn primary"
+             href="https://suno.com/@keithtaylor221"
+             target="_blank" rel="noopener">
+            Stream FlightLine Catalog (Suno)
+          </a>
 
-    <div class="panel">
-      <strong>Now Streaming · Google Vids Library</strong>
-      <p style="margin:6px 0 10px;">
-        Von uploads once. FlightLine routes that track everywhere it needs to go.
-        This embed is the live **RAD Library** (Google Vids).
-      </p>
-      <!-- Replace src with your Google Vids project URL -->
-      <iframe
-        src="PASTE_GOOGLE_VIDS_RAD"
-        title="FlightLine Radio · Google Vids Library">
-      </iframe>
-    </div>
+          <a class="btn secondary"
+             href="PASTE_RAD_CUSTOM_RECORD_FORM"
+             target="_blank" rel="noopener">
+            Request Custom Record
+          </a>
 
-    <div class="panel">
-      <strong>Public Records · Suno Profile</strong>
-      <p style="margin:6px 0 10px;">
-        Master catalogue lives here. Flight Anthem, Pins 1–10, NETTOPIA series, DYSTOPIA series, Timeline terminals.
-      </p>
-      <a class="btn btn-ghost"
-         href="https://suno.com/@keithtaylor221"
-         target="_blank" rel="noopener">
-        Open 🛫 FlightLine Public Records on Suno
-      </a>
-    </div>
+          <a class="btn ghost"
+             href="PASTE_RAD_UPLOAD_PORTAL"
+             target="_blank" rel="noopener">
+            Upload New Track (Drive / Vids)
+          </a>
+        </div>
 
-    <footer>
-      <span>Every broadcast leaves a Motion Proof trail.</span>
-      <span>FlightLine · Lane RAD · Mycelium901</span>
-    </footer>
+        <p class="lane-note">
+          Von curates which tracks become <strong>official FlightLine Public Records</strong>,
+          routing approved songs into the grid for airports, museums, and digital real estate.
+        </p>
+      </div>
+
+      <figure class="lane-hero-media">
+        <img src="../../assets/img/von-yellow-plane.png"
+             alt="Yellow FlightLine aircraft — Public Records Radio" />
+        <figcaption>RAD Gate — Public Records aircraft on the sound runway.</figcaption>
+      </figure>
+    </section>
+
+    <section class="lane-section">
+      <h2>RAD Tools</h2>
+      <ul class="lane-list">
+        <li>Suno catalog for all official FlightLine tracks.</li>
+        <li>Google Vids for audio-visual loops and flight promos.</li>
+        <li>Google Forms for custom record and collab requests.</li>
+        <li>Sheets log to track plays, placements, and PC-30 notes.</li>
+      </ul>
+    </section>
   </main>
 </body>
 </html>
+
