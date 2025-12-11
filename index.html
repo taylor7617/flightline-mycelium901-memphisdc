@@ -159,6 +159,13 @@
     }
     .btn.mini{padding:7px 9px;font-size:12px;border-radius:10px}
 
+    .lane-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-top:6px;
+    }
+
     /* ======= TERMINAL CARDS ======= */
     .lanes-grid{
       display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;
@@ -352,9 +359,13 @@
           <div class="lane-title">FlightLine Fitness — Go Hard Go Home</div>
           <div class="lane-sub">Vic · Private Training · Kinetic Proof</div>
           <div class="lane-meta">Lane Code: FIT · Status: Active</div>
-          <div style="display:flex;gap:6px;margin-top:6px">
-            <span class="status">BOOK</span>
-            <span class="status">TRAIN</span>
+          <div class="lane-actions">
+            <a class="btn mini" href="#" data-family-form data-lane="FIT_BOOK" target="_blank" rel="noopener">
+              Book Session
+            </a>
+            <a class="btn mini secondary" href="#" data-family-form data-lane="FIT_DSX" target="_blank" rel="noopener">
+              Load DSX Pack for Training
+            </a>
           </div>
         </a>
 
@@ -364,9 +375,13 @@
           <div class="lane-title">FlightLine Radio — The Sound of the Grid</div>
           <div class="lane-sub">Von · FlightLine Public Records · Sonic Motion</div>
           <div class="lane-meta">Lane Code: RAD · Status: Active</div>
-          <div style="display:flex;gap:6px;margin-top:6px">
-            <span class="status">BUY</span>
-            <span class="status">COLLAB</span>
+          <div class="lane-actions">
+            <a class="btn mini" href="#" data-family-form data-lane="RAD_BOOK" target="_blank" rel="noopener">
+              Book Recording Slot
+            </a>
+            <a class="btn mini secondary" href="#" data-family-form data-lane="RAD_SUBMIT" target="_blank" rel="noopener">
+              Submit Story / Track
+            </a>
           </div>
         </a>
 
@@ -376,9 +391,13 @@
           <div class="lane-title">FlightLine Basement — The Engine Room</div>
           <div class="lane-sub">TaShawnda · Virtual Assistant · Ops Control</div>
           <div class="lane-meta">Lane Code: BSM · Status: Active</div>
-          <div style="display:flex;gap:6px;margin-top:6px">
-            <span class="status">OPS</span>
-            <span class="status">ROUTE</span>
+          <div class="lane-actions">
+            <a class="btn mini" href="#" data-family-form data-lane="BSM_REQUEST" target="_blank" rel="noopener">
+              Submit Ops Request
+            </a>
+            <a class="btn mini secondary" href="#" data-family-form data-lane="BSM_BOARDS" target="_blank" rel="noopener">
+              View Ops Boards
+            </a>
           </div>
         </a>
 
@@ -386,11 +405,22 @@
         <a class="lane-card" href="lanes/rcp-mom/index.html">
           <div class="lane-badge" style="background:linear-gradient(135deg,#FFFFFF,#00BFA6);">RCP</div>
           <div class="lane-title">Reception Desk — Family Routing Grid</div>
-          <div class="lane-sub">Lady J (Mom) · Intake · Routes clients to correct lane</div>
+          <div class="lane-sub">
+            “Tell Me What You Need. I’ll Seat You.”
+            This lane is where people, not tech, come first. Lady J listens to what you’re really
+            trying to fix and routes you to the right lane, DSX Pack, or meeting.
+            <br><br>
+            • I don’t know where to start — Answer a few questions. We’ll route you.<br>
+            • I need physical training — Send me to FlightLine Fitness with Vic.<br>
+            • I need audio / radio help — Signal, stories, or public sound.<br>
+            • My operations are messy — Tasks, inbox, schedule, and systems.<br>
+            • I want digital real estate — QR corridors, listings, towers, or maps.
+          </div>
           <div class="lane-meta">Lane Code: RCP · Status: Active</div>
-          <div style="display:flex;gap:6px;margin-top:6px">
-            <span class="status">INTAKE</span>
-            <span class="status">DISPATCH</span>
+          <div class="lane-actions">
+            <a class="btn mini" href="#" data-family-form data-lane="RCP_INTAKE" target="_blank" rel="noopener">
+              Start Intake · “Seat Me”
+            </a>
           </div>
         </a>
 
@@ -400,9 +430,13 @@
           <div class="lane-title">FlightLine Gates — Digital Real Estate</div>
           <div class="lane-sub">Angel · Corridor Leasing · Listings · Gate Ops</div>
           <div class="lane-meta">Lane Code: DRE · Status: Active</div>
-          <div style="display:flex;gap:6px;margin-top:6px">
-            <span class="status">LEASE</span>
-            <span class="status">LIST</span>
+          <div class="lane-actions">
+            <a class="btn mini" href="#" data-family-form data-lane="DRE_CORRIDOR" target="_blank" rel="noopener">
+              Start Corridor Request
+            </a>
+            <a class="btn mini secondary" href="#" data-family-form data-lane="DRE_PLATES" target="_blank" rel="noopener">
+              View Available Plates
+            </a>
           </div>
         </a>
 
@@ -490,7 +524,7 @@
             <td>DSX 10<br/><span class="tiny">Googol</span></td>
             <td>Googol · Plant the flag for mega-motion and full network takeover.</td>
             <td>$10,000.00</td>
-            <td><a class="btn mini" href="https://buy.stripe.com/7sY4gAaM75G09jJ6Uj7g40f" target="_blank" rel="noopener">Buy Pack 10 &amp; FlightLine Gates</a></td>
+            <td><a class="btn mini" href="https://buy.stripe.com/dRm9AU3jF7O89jJemL7g40g" target="_blank" rel="noopener">Buy Pack 10 &amp; FlightLine Gates</a></td>
           </tr>
         </tbody>
       </table>
@@ -818,5 +852,18 @@
   </footer>
 
 </main>
+
+<!-- ======= FAMILY FORM ROUTING SCRIPT ======= -->
+<script>
+  (function(){
+    // TODO: Replace with your actual unified sibling/mom intake Google Form URL
+    var FAMILY_FORM_URL = 'https://docs.google.com/forms/d/e/YOUR_FAMILY_FORM_ID/viewform';
+
+    document.querySelectorAll('[data-family-form]').forEach(function(el){
+      el.href = FAMILY_FORM_URL;
+    });
+  })();
+</script>
+
 </body>
 </html>
