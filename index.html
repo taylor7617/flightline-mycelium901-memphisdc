@@ -43,6 +43,7 @@
         radial-gradient(900px 520px at 30% 120%, color-mix(in oklab, var(--accent-3) 18%, transparent), transparent 60%),
         linear-gradient(180deg, var(--bg), var(--bg-2));
     }
+
     a{color:inherit;text-decoration:none}
     .wrap{max-width:1200px;margin:0 auto;padding:20px}
 
@@ -184,7 +185,7 @@
     .lane-sub{font-size:12px;color:var(--muted);line-height:1.5}
     .lane-meta{font-size:11px;color:var(--muted);letter-spacing:.06em}
 
-    /* ======= DEPARTURES & ARRIVALS BOARD ======= */
+    /* ======= TABLE / BOARDS ======= */
     table{
       width:100%;border-collapse:separate;border-spacing:0 8px;font-size:13px;
     }
@@ -198,8 +199,14 @@
       padding:10px;border-top:1px solid rgba(255,255,255,.08);
       border-bottom:1px solid rgba(255,255,255,.08);
     }
-    tr.board td:first-child{border-left:1px solid rgba(255,255,255,.08);border-top-left-radius:12px;border-bottom-left-radius:12px}
-    tr.board td:last-child{border-right:1px solid rgba(255,255,255,.08);border-top-right-radius:12px;border-bottom-right-radius:12px}
+    tr.board td:first-child{
+      border-left:1px solid rgba(255,255,255,.08);
+      border-top-left-radius:12px;border-bottom-left-radius:12px;
+    }
+    tr.board td:last-child{
+      border-right:1px solid rgba(255,255,255,.08);
+      border-top-right-radius:12px;border-bottom-right-radius:12px;
+    }
     .status{
       font-weight:900;font-family:var(--mono);letter-spacing:.08em;font-size:12px;
       padding:6px 8px;border-radius:999px;display:inline-block;
@@ -249,6 +256,7 @@
     }
     .tiny{font-size:11px;color:var(--muted)}
   </style>
+
 </head>
 
 <body>
@@ -266,7 +274,7 @@
     <nav class="nav">
       <a href="#lanes">Family Lanes</a>
       <a href="#packs">DSX Packs</a>
-      <a href="#board">Departures Board</a>
+      <a href="#board">Gate Board</a>
       <a href="#arrivals">Arrivals Board</a>
       <a href="#planetarium">Planetarium Vault</a>
       <a href="#proof">Proof Stack</a>
@@ -279,6 +287,7 @@
 <main class="wrap">
 
   <!-- ================== HERO ================== -->
+
   <section class="hero">
     <div class="card">
       <h2>WHAT THIS PAGE DOES</h2>
@@ -286,14 +295,26 @@
         Shows <strong>Mycelium901 Family Lanes</strong> like a terminal menu, lists
         <strong>FlightLine Gates</strong> like a departures screen, exposes the three-layer
         <strong>Proof Stack</strong>, opens the <strong>Wolfpack Planetarium Vault</strong>,
-        and routes clients into Stripe / Calendly / Forms for each lane.
+        and routes clients into Stripe / Forms for each lane.
       </p>
 
       <div class="statrow">
-        <div class="stat"><div class="label">CITY HUB</div><div class="value">MYCELIUM901</div></div>
-        <div class="stat"><div class="label">LANES</div><div class="value">5 ACTIVE</div></div>
-        <div class="stat"><div class="label">MOTION</div><div class="value">DSX PACKS</div></div>
-        <div class="stat"><div class="label">PROOF</div><div class="value">STACK LIVE</div></div>
+        <div class="stat">
+          <div class="label">CITY HUB</div>
+          <div class="value">MYCELIUM901</div>
+        </div>
+        <div class="stat">
+          <div class="label">LANES</div>
+          <div class="value">5 ACTIVE</div>
+        </div>
+        <div class="stat">
+          <div class="label">MOTION</div>
+          <div class="value">DSX PACKS</div>
+        </div>
+        <div class="stat">
+          <div class="label">PROOF</div>
+          <div class="value">STACK LIVE</div>
+        </div>
       </div>
     </div>
 
@@ -304,7 +325,7 @@
       </div>
       <div style="display:grid;gap:8px">
         <a class="btn" href="#lanes">Enter Family Lanes</a>
-        <a class="btn secondary" href="#packs">Buy DSX Pack</a>
+        <a class="btn secondary" href="#packs">DSX Credit Board</a>
         <a class="btn secondary" href="#planetarium">Open Planetarium Vault</a>
         <a class="btn secondary" href="#proof">Open Proof Stack</a>
       </div>
@@ -315,6 +336,7 @@
   </section>
 
   <!-- ================== FAMILY LANES ================== -->
+
   <section class="section">
     <div class="card col-12" id="lanes">
       <div class="lane-header">
@@ -388,106 +410,182 @@
     </div>
   </section>
 
-  <!-- ================== DSX PACKS (HUB) ================== -->
+  <!-- ================== DSX PACKS (CREDIT BOARD) ================== -->
+
   <section class="section">
     <div class="card col-12" id="packs">
       <div class="lane-header">
-        <h2>DSX PACKS — FAMILY MOTION FUEL</h2>
-        <div class="lane-chip">STRIPE HUB</div>
+        <h2>DEPARTURES · DSX CREDIT BOARD</h2>
+        <div class="lane-chip">PACKS 01–10</div>
       </div>
       <p>
-        These DSX Packs fund motion across all family lanes.  
-        If you’re unsure which lane to choose, start here.
+        DSX Packs are motion credits on the grid. Each pack fuels a different scale of deployment — from one storefront to full-network takeover.
       </p>
 
-      <div class="grid" style="margin-top:10px">
-        <div class="pack">
-          <div class="pname">DSX Pack 01 — Starter</div>
-          <div class="pdesc">Entry motion credit.</div>
-          <div class="price">$1</div>
-          <a class="btn buy" href="PASTE_DSX_STRIPE_1">Buy Now</a>
-        </div>
-
-        <div class="pack">
-          <div class="pname">DSX Pack 02 — Local Ops</div>
-          <div class="pdesc">Neighborhood motion.</div>
-          <div class="price">$5</div>
-          <a class="btn buy" href="PASTE_DSX_STRIPE_2">Buy Now</a>
-        </div>
-
-        <div class="pack">
-          <div class="pname">DSX Pack 03 — Corridor Builder</div>
-          <div class="pdesc">Build momentum and routes.</div>
-          <div class="price">$10</div>
-          <a class="btn buy" href="PASTE_DSX_STRIPE_3">Buy Now</a>
-        </div>
-
-        <div class="pack">
-          <div class="pname">DSX Pack 04 — City Runner</div>
-          <div class="pdesc">High-motion tier.</div>
-          <div class="price">$25</div>
-          <a class="btn buy" href="PASTE_DSX_STRIPE_4">Buy Now</a>
-        </div>
-
-        <div class="pack">
-          <div class="pname">DSX Pack 05 — Regional Motion</div>
-          <div class="pdesc">Elite fuel for serious buildout.</div>
-          <div class="price">$50</div>
-          <a class="btn buy" href="PASTE_DSX_STRIPE_5">Buy Now</a>
-        </div>
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>PACK</th>
+            <th>DESCRIPTION</th>
+            <th>VALUE (USD)</th>
+            <th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="board">
+            <td>DSX 01<br/><span class="tiny">Start Here</span></td>
+            <td>Starter · First spark of motion on the grid.</td>
+            <td>$1.00</td>
+            <td><a class="btn mini" href="https://buy.stripe.com/dRm4gAaM75G09jJ92r7g405" target="_blank" rel="noopener">Buy Pack 01</a></td>
+          </tr>
+          <tr class="board">
+            <td>DSX 02<br/><span class="tiny">Local Ops</span></td>
+            <td>Local Ops · Light up one neighborhood or single shop.</td>
+            <td>$5.00</td>
+            <td><a class="btn mini" href="https://buy.stripe.com/aFa8wQf2n4BW0Nd3I77g406" target="_blank" rel="noopener">Buy Pack 02</a></td>
+          </tr>
+          <tr class="board">
+            <td>DSX 03<br/><span class="tiny">Corridor Builder</span></td>
+            <td>Corridor Builder · Connect two or more live routes between hubs.</td>
+            <td>$10.00</td>
+            <td><a class="btn mini" href="https://buy.stripe.com/14AaEY4nJgkEfI75Qf7g407" target="_blank" rel="noopener">Buy Pack 03</a></td>
+          </tr>
+          <tr class="board">
+            <td>DSX 04<br/><span class="tiny">City Start</span></td>
+            <td>City Runner · Power one city-level grid with active lanes.</td>
+            <td>$25.00</td>
+            <td><a class="btn mini" href="https://buy.stripe.com/8x228sf2nb0keE30vV7g408" target="_blank" rel="noopener">Buy Pack 04</a></td>
+          </tr>
+          <tr class="board">
+            <td>DSX 05<br/><span class="tiny">Regional Motion</span></td>
+            <td>Regional Motion · Keep multiple cities and towers moving together.</td>
+            <td>$50.00</td>
+            <td><a class="btn mini" href="https://buy.stripe.com/fZu3cw2fB0lG7bB1zZ7g40b" target="_blank" rel="noopener">Buy Pack 05</a></td>
+          </tr>
+          <tr class="board">
+            <td>DSX 06<br/><span class="tiny">Network Builder</span></td>
+            <td>Network Builder · Stitch regions into one continuous network.</td>
+            <td>$100.00</td>
+            <td><a class="btn mini" href="https://buy.stripe.com/3cIeVecUffgAgMb92r7g40a" target="_blank" rel="noopener">Buy Pack 06</a></td>
+          </tr>
+          <tr class="board">
+            <td>DSX 07<br/><span class="tiny">Mission Ops</span></td>
+            <td>Mission Ops · Fuel a full campaign, launch, or seasonal push.</td>
+            <td>$250.00</td>
+            <td><a class="btn mini" href="https://buy.stripe.com/9B600kbQb3xS1RhguT7g40d" target="_blank" rel="noopener">Buy Pack 07</a></td>
+          </tr>
+          <tr class="board">
+            <td>DSX 08<br/><span class="tiny">Layer Fuel</span></td>
+            <td>Layer Fuel · Long-haul deployments across states and corridors.</td>
+            <td>$500.00</td>
+            <td><a class="btn mini" href="https://buy.stripe.com/eVqfZi3jF6K4eE32E37g40z" target="_blank" rel="noopener">Buy Pack 08</a></td>
+          </tr>
+          <tr class="board">
+            <td>DSX 09<br/><span class="tiny">UniverCity Tier</span></td>
+            <td>UniverCity Tier · Train campuses, teams, and cohorts on the grid.</td>
+            <td>$1,000.00</td>
+            <td><a class="btn mini" href="https://buy.stripe.com/7sY4gAaM75G09jJ6Uj7g40f" target="_blank" rel="noopener">Buy Pack 09</a></td>
+          </tr>
+          <tr class="board">
+            <td>DSX 10<br/><span class="tiny">Googol</span></td>
+            <td>Googol · Plant the flag for mega-motion and full network takeover.</td>
+            <td>$10,000.00</td>
+            <td><a class="btn mini" href="https://buy.stripe.com/7sY4gAaM75G09jJ6Uj7g40f" target="_blank" rel="noopener">Buy Pack 10 &amp; FlightLine Gates</a></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
-  <!-- ================== DEPARTURES / GATES BOARD ================== -->
+  <!-- ================== DEPARTURES / GATE BOARD ================== -->
+
   <section class="section">
     <div class="card col-12" id="board">
       <div class="lane-header">
-        <h2>FLIGHTLINE BOARD — DEPARTURES</h2>
-        <div class="lane-chip">G1–G17 STYLE</div>
+        <h2>DEPARTURES · GATE BOARD</h2>
+        <div class="lane-chip">G1–G17</div>
       </div>
+
+      <p>
+        Gates are leased corridors on the grid — storefronts, neighborhoods, cities, regions, and beyond.
+        Each gate can be tied to a DSX Pack and Proof Stack logs, so every campaign, city, and partner has a clear lane.
+      </p>
 
       <table>
         <thead>
           <tr>
             <th>GATE</th>
-            <th>SECTION</th>
-            <th>ROUTE</th>
-            <th>CODE</th>
+            <th>TIER</th>
+            <th>USE CASE</th>
             <th>STATUS</th>
-            <th>VIEW</th>
           </tr>
         </thead>
-
         <tbody>
           <tr class="board">
-            <td>FIT</td><td>TRAINING</td><td>Vic Fitness</td><td>FIT</td>
-            <td><span class="status">ACTIVE</span></td>
-            <td><a class="btn mini" href="lanes/fit-vic/index.html">View</a></td>
+            <td>G1</td>
+            <td>Storefront Lane</td>
+            <td>Single brand / first entry</td>
+            <td><span class="status">OPEN FOR LEASE</span></td>
           </tr>
-
           <tr class="board">
-            <td>RAD</td><td>AUDIO</td><td>Von Radio</td><td>RAD</td>
-            <td><span class="status">ACTIVE</span></td>
-            <td><a class="btn mini" href="lanes/rad-von/index.html">View</a></td>
+            <td>G2</td>
+            <td>Neighborhood Runway</td>
+            <td>Blocks, streets, small clusters</td>
+            <td><span class="status">OPEN FOR LEASE</span></td>
           </tr>
-
           <tr class="board">
-            <td>BSM</td><td>OPS</td><td>TaShawnda Basement</td><td>BSM</td>
-            <td><span class="status">ACTIVE</span></td>
-            <td><a class="btn mini" href="lanes/bsm-tashawnda/index.html">View</a></td>
+            <td>G3</td>
+            <td>City Grid Gate</td>
+            <td>One city, multiple lanes</td>
+            <td><span class="status">RESERVED · MEMPHIS DC</span></td>
           </tr>
-
           <tr class="board">
-            <td>RCP</td><td>RECEPTION</td><td>Mom Routing Desk</td><td>RCP</td>
-            <td><span class="status">ACTIVE</span></td>
-            <td><a class="btn mini" href="lanes/rcp-mom/index.html">View</a></td>
+            <td>G4</td>
+            <td>Regional Corridor</td>
+            <td>Multi-city / state corridor</td>
+            <td><span class="status">OPEN FOR LEASE</span></td>
           </tr>
-
           <tr class="board">
-            <td>DRE</td><td>GATES</td><td>Angel Digital Real Estate</td><td>DRE</td>
-            <td><span class="status">ACTIVE</span></td>
-            <td><a class="btn mini" href="lanes/gate-angel/index.html">View</a></td>
+            <td>G5</td>
+            <td>State Grid</td>
+            <td>Full state deployment</td>
+            <td><span class="status">PLANNING</span></td>
+          </tr>
+          <tr class="board">
+            <td>G6</td>
+            <td>Interstate Spine</td>
+            <td>Cross-state travel + BTC lanes</td>
+            <td><span class="status">PLANNING</span></td>
+          </tr>
+          <tr class="board">
+            <td>G7</td>
+            <td>Region Hub</td>
+            <td>Cluster of states / cities</td>
+            <td><span class="status">UNDER REVIEW</span></td>
+          </tr>
+          <tr class="board">
+            <td>G8</td>
+            <td>BTC Travel Gate</td>
+            <td>BTC Traveler &amp; B10 Towers</td>
+            <td><span class="status">RESERVED · CODE OF D.A.V.I.D.</span></td>
+          </tr>
+          <tr class="board">
+            <td>G9</td>
+            <td>Campus / UniverCity</td>
+            <td>Schools, teams, academies</td>
+            <td><span class="status">OPEN FOR LEASE</span></td>
+          </tr>
+          <tr class="board">
+            <td>G10</td>
+            <td>Enterprise Gate</td>
+            <td>Corporate / national partners</td>
+            <td><span class="status">IN DISCUSSION</span></td>
+          </tr>
+          <tr class="board">
+            <td>G11–G17</td>
+            <td>Expansion Lanes</td>
+            <td>Future towers, continents, alliances</td>
+            <td><span class="status">RESERVED FOR GROWTH</span></td>
           </tr>
         </tbody>
       </table>
@@ -495,6 +593,7 @@
   </section>
 
   <!-- ================== ARRIVALS / COMMAND BOARD ================== -->
+
   <section class="section">
     <div class="card col-12" id="arrivals">
       <div class="lane-header">
@@ -545,6 +644,7 @@
   </section>
 
   <!-- ================== WOLFPACK PLANETARIUM VAULT ================== -->
+
   <section class="section">
     <div class="card col-12" id="planetarium">
       <div class="lane-header">
@@ -595,6 +695,7 @@
   </section>
 
   <!-- ================== PROOF STACK (HUB) ================== -->
+
   <section class="section">
     <div class="card col-12" id="proof">
       <div class="lane-header">
@@ -610,40 +711,66 @@
         <div class="pack">
           <div class="pname">Scan Log</div>
           <div class="pdesc">Client entry + route scan record.</div>
-          <a class="btn secondary buy" href="PASTE_SCAN_LOG_FORM">Open Scan Log</a>
+          <a class="btn secondary buy"
+             href="https://docs.google.com/forms/d/e/1FAIpQLSfG31qLQ3YICSNpwyL8z4PZmTT-okamL-q7jb1iBLcNI9enPQ/viewform"
+             target="_blank" rel="noopener">
+            Open Scan Log
+          </a>
         </div>
 
         <div class="pack">
           <div class="pname">Motion Ledger</div>
           <div class="pdesc">Stripe purchase + motion proof record.</div>
-          <a class="btn secondary buy" href="PASTE_MOTION_LEDGER_FORM">Open Motion Ledger</a>
+          <a class="btn secondary buy"
+             href="https://docs.google.com/forms/d/e/1FAIpQLSe-bpSq-9L_0PNhkCpTnZUwL2sq9nALzMQMmVDfFzfW41Utdw/viewform"
+             target="_blank" rel="noopener">
+            Open Motion Ledger
+          </a>
         </div>
 
         <div class="pack">
           <div class="pname">Custody Register</div>
           <div class="pdesc">Service delivery + follow-up outcomes.</div>
-          <a class="btn secondary buy" href="PASTE_CUSTODY_REGISTER_FORM">Open Custody Register</a>
+          <a class="btn secondary buy"
+             href="https://docs.google.com/forms/d/e/1FAIpQLSehAYzAYYriBnYPxwqfrdo-eYVmygqnvqVE630Jkg7--tsSGw/viewform"
+             target="_blank" rel="noopener">
+            Open Custody Register
+          </a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ================== PC MEETING ================== -->
+
   <section class="section">
     <div class="card col-7" id="pc">
       <div class="lane-header">
-        <h2>30-Minute PC Meeting (You)</h2>
+        <h2>30-Minute PC Meeting (Stewardship · JT-III)</h2>
         <div class="lane-chip">PC-30</div>
       </div>
       <p>
-        Weekly performance review for all five lanes.  
-        Every Proof entry rolls into PC-30 for decisions and upgrades.
+        Weekly stewardship and performance check for all five lanes.  
+        Every Proof Stack entry rolls into PC-30 for decisions, upgrades, and course corrections.
       </p>
 
       <div style="margin-top:10px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12);min-height:520px;">
-        <iframe src="PASTE_PC_MEETING_CALENDLY"
-                width="100%" height="520" frameborder="0" scrolling="no"
-                title="PC Meeting Calendly"></iframe>
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLScXQXfA2BUkA4R5rvCI1mr3GFcPiYAkESVWWWCB0kde3OO9nw/viewform"
+          width="100%"
+          height="520"
+          frameborder="0"
+          scrolling="auto"
+          title="30-Minute PC Meeting Form">
+        </iframe>
+      </div>
+
+      <div style="margin-top:10px;">
+        <a class="btn secondary"
+           href="https://docs.google.com/forms/d/e/1FAIpQLScXQXfA2BUkA4R5rvCI1mr3GFcPiYAkESVWWWCB0kde3OO9nw/viewform"
+           target="_blank" rel="noopener">
+          Open PC-30 Meeting Form in New Tab
+        </a>
       </div>
     </div>
 
@@ -654,16 +781,17 @@
       </div>
 
       <ul style="line-height:1.7;color:var(--muted);padding-left:18px">
-        <li>All lane payments flow through Stripe Packs.</li>
-        <li>All bookings are Proof Stack entries.</li>
-        <li>Reception (Lady J) routes new clients.</li>
-        <li>Gates / DRE (Angel) manages corridor leasing.</li>
-        <li>PC-30 meeting handles upgrades and enforcement.</li>
+        <li>All lane payments flow through DSX Packs.</li>
+        <li>All bookings and scans become Proof Stack entries.</li>
+        <li>Reception (Lady J) routes new clients to correct lanes.</li>
+        <li>Gates / DRE (Angel) manages corridor leasing and listings.</li>
+        <li>PC-30 meeting handles upgrades, stewardship, and enforcement.</li>
       </ul>
     </div>
   </section>
 
   <!-- ================== CONTACT ================== -->
+
   <section class="section">
     <div class="card col-12" id="contact">
       <div class="lane-header">
@@ -671,11 +799,15 @@
         <div class="lane-chip">OPS</div>
       </div>
 
-      <p>Need help or partnership routing? Contact HQ.</p>
+      <p>Need help or partnership routing? Use the GI# for HQ access.</p>
+
+      <p class="tiny">
+        GI# (Google Infrastructure Access Code) — <strong>theflightlinehq@gmail.com</strong>
+      </p>
+
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
-        <a class="btn secondary" href="tel:PASTE_HQ_PHONE">Call HQ</a>
-        <a class="btn secondary" href="mailto:taylor@theflightlinehq.com">Email HQ</a>
-        <a class="btn" href="#lanes">Family Lanes</a>
+        <a class="btn secondary" href="mailto:theflightlinehq@gmail.com">Email HQ via GI#</a>
+        <a class="btn" href="#lanes">Return to Family Lanes</a>
       </div>
     </div>
   </section>
@@ -684,10 +816,6 @@
     <div>FlightLine Mycelium901 Memphis DC → NETTOPIA</div>
     <div class="tiny">5 Lanes Active · DSX Motion Fuel · Proof Stack Live · Planetarium Vault Online</div>
   </footer>
-
-</main>
-</body>
-</html>
 
 </main>
 </body>
